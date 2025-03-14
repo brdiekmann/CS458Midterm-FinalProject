@@ -1,12 +1,134 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\steel\\source\\repos\\CS458Midterm-FinalProject\\FinalProject\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\eth43\\midterm\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\eth43\\midterm\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\projectlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\projectlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\eth43\\midterm\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\biddinglog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\biddinglog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\eth43\\midterm\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\projectbid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\projectbid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\eth43\\midterm\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\eth43\\midterm\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Attachment.cs",
+              "DocumentMoniker": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Attachment.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\Attachment.cs",
+              "ToolTip": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Attachment.cs",
+              "RelativeToolTip": "FinalProject\\Models\\Attachment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:34:21.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectLog.cs",
+              "DocumentMoniker": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\ProjectLog.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\ProjectLog.cs",
+              "ToolTip": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\ProjectLog.cs",
+              "RelativeToolTip": "FinalProject\\Models\\ProjectLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:33:40.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BiddingLog.cs",
+              "DocumentMoniker": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\BiddingLog.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\BiddingLog.cs",
+              "ToolTip": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\BiddingLog.cs",
+              "RelativeToolTip": "FinalProject\\Models\\BiddingLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:33:16.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjectBid.cs",
+              "DocumentMoniker": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\ProjectBid.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\ProjectBid.cs",
+              "ToolTip": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\ProjectBid.cs",
+              "RelativeToolTip": "FinalProject\\Models\\ProjectBid.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:33:02.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\Project.cs",
+              "ToolTip": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Project.cs",
+              "RelativeToolTip": "FinalProject\\Models\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:32:09.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\User.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\User.cs",
+              "RelativeToolTip": "FinalProject\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:31:47.242Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
