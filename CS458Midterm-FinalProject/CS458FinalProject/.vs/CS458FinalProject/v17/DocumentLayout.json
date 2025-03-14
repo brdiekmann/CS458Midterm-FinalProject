@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\steel\\source\\repos\\CS458Midterm-FinalProject\\.vs\\CS458Midterm-FinalProject\\CS458FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A7AE432-F42B-4BA3-9BB6-15003CD42847}|CS458FinalProject\\CS458FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458midterm-finalproject\\.vs\\cs458midterm-finalproject\\cs458finalproject\\cs458finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A7AE432-F42B-4BA3-9BB6-15003CD42847}|CS458FinalProject\\CS458FinalProject.csproj|solutionrelative:cs458finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3A7AE432-F42B-4BA3-9BB6-15003CD42847}|CS458FinalProject\\CS458FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458midterm-finalproject\\.vs\\cs458midterm-finalproject\\cs458finalproject\\cs458finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3A7AE432-F42B-4BA3-9BB6-15003CD42847}|CS458FinalProject\\CS458FinalProject.csproj|solutionrelative:cs458finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A7AE432-F42B-4BA3-9BB6-15003CD42847}|CS458FinalProject\\CS458FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458midterm-finalproject\\.vs\\cs458midterm-finalproject\\cs458finalproject\\cs458finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A7AE432-F42B-4BA3-9BB6-15003CD42847}|CS458FinalProject\\CS458FinalProject.csproj|solutionrelative:cs458finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Midterm-FinalProject\\.vs\\CS458Midterm-FinalProject\\CS458FinalProject\\CS458FinalProject\\appsettings.json",
               "RelativeDocumentMoniker": "CS458FinalProject\\appsettings.json",
@@ -35,7 +35,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Midterm-FinalProject\\.vs\\CS458Midterm-FinalProject\\CS458FinalProject\\CS458FinalProject\\Program.cs",
               "RelativeDocumentMoniker": "CS458FinalProject\\Program.cs",
