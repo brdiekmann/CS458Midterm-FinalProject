@@ -1,4 +1,4 @@
-﻿using FinalProject.Models;
+﻿using FinalProject.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 namespace FinalProject.Data
 {
