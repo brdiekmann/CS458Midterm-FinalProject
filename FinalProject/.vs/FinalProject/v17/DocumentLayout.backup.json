@@ -1,73 +1,69 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\",
+  "WorkspaceRootPath": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\views\\users\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\views\\users\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\views\\users\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\projectbidscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\projectbidscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\projectbidscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\attachmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\attachmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\biddinglogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\biddinglogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\migrations\\20250317170848_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\migrations\\20250317170848_initial migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\projectlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\attachment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\attachmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\attachmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\biddinglogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\biddinglogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\projectlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\projectlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\biddinglog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\biddinglog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\biddinglog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\projectbid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\projectbid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\projectbid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458finproj\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|c:\\users\\steel\\source\\repos\\cs458final\\cs458midterm-finalproject\\finalproject\\finalproject\\models\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0DC11C3A-99A4-484A-84DE-99A466A5D9FA}|FinalProject\\FinalProject.csproj|solutionrelative:finalproject\\models\\entities\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -78,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,37 +90,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\User.cs",
-              "RelativeToolTip": "FinalProject\\Models\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:31:47.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\UserViewModel.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Models\\UserViewModel.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\UserViewModel.cs",
-              "RelativeToolTip": "FinalProject\\Models\\UserViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T18:11:14.541Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Add.cshtml",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Views\\Users\\Add.cshtml",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Views\\Users\\Add.cshtml",
               "RelativeDocumentMoniker": "FinalProject\\Views\\Users\\Add.cshtml",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Views\\Users\\Add.cshtml",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Views\\Users\\Add.cshtml",
               "RelativeToolTip": "FinalProject\\Views\\Users\\Add.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -133,11 +103,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ProjectBidsController.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectBidsController.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectBidsController.cs",
               "RelativeDocumentMoniker": "FinalProject\\Controllers\\ProjectBidsController.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectBidsController.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectBidsController.cs",
               "RelativeToolTip": "FinalProject\\Controllers\\ProjectBidsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -146,160 +116,185 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "FinalProject\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\UsersController.cs",
               "RelativeToolTip": "FinalProject\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T17:12:35.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Data\\AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "FinalProject\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Data\\AppDbContext.cs",
               "RelativeToolTip": "FinalProject\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAswB4AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:53:33.262Z"
+              "WhenOpened": "2025-03-14T01:53:33.262Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Attachment.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Attachment.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\Attachment.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Attachment.cs",
-              "RelativeToolTip": "FinalProject\\Models\\Entities\\Attachment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\User.cs",
+              "RelativeToolTip": "FinalProject\\Models\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:34:21.058Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BiddingLogController.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\BiddingLogController.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Controllers\\BiddingLogController.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\BiddingLogController.cs",
-              "RelativeToolTip": "FinalProject\\Controllers\\BiddingLogController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:14:48.792Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AttachmentsController.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\AttachmentsController.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Controllers\\AttachmentsController.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\AttachmentsController.cs",
-              "RelativeToolTip": "FinalProject\\Controllers\\AttachmentsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:15:41.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProjectsController.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectsController.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Controllers\\ProjectsController.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectsController.cs",
-              "RelativeToolTip": "FinalProject\\Controllers\\ProjectsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:13:25.484Z"
+              "WhenOpened": "2025-03-14T01:31:47.242Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "20250317170848_Initial Migration.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Migrations\\20250317170848_Initial Migration.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Migrations\\20250317170848_Initial Migration.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Migrations\\20250317170848_Initial Migration.cs",
-              "RelativeToolTip": "FinalProject\\Migrations\\20250317170848_Initial Migration.cs",
+              "Title": "BiddingLogController.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\BiddingLogController.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Controllers\\BiddingLogController.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\BiddingLogController.cs",
+              "RelativeToolTip": "FinalProject\\Controllers\\BiddingLogController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:08:48.679Z"
+              "WhenOpened": "2025-03-17T17:14:48.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Program.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Program.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Program.cs",
+              "RelativeToolTip": "FinalProject\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T02:01:16.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\appsettings.json",
+              "RelativeDocumentMoniker": "FinalProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\appsettings.json",
+              "RelativeToolTip": "FinalProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-14T01:59:38.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Attachment.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Attachment.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\Attachment.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Attachment.cs",
+              "RelativeToolTip": "FinalProject\\Models\\Entities\\Attachment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:34:21.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\UserViewModel.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\UserViewModel.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\UserViewModel.cs",
+              "RelativeToolTip": "FinalProject\\Models\\UserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T18:11:14.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AttachmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\AttachmentsController.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Controllers\\AttachmentsController.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\AttachmentsController.cs",
+              "RelativeToolTip": "FinalProject\\Controllers\\AttachmentsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T17:15:41.266Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Program.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Program.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Program.cs",
-              "RelativeToolTip": "FinalProject\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABeAAAAAAAAAA==",
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "FinalProject\\Controllers\\ProjectsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T02:01:16.508Z"
+              "WhenOpened": "2025-03-17T17:13:25.484Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\appsettings.json",
-              "RelativeDocumentMoniker": "FinalProject\\appsettings.json",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\appsettings.json",
-              "RelativeToolTip": "FinalProject\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-14T01:59:38.157Z"
+              "Title": "ProjectLog.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectLog.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\ProjectLog.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectLog.cs",
+              "RelativeToolTip": "FinalProject\\Models\\Entities\\ProjectLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T01:33:40.568Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "ProjectLog.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectLog.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\ProjectLog.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectLog.cs",
-              "RelativeToolTip": "FinalProject\\Models\\Entities\\ProjectLog.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwBYAAAAsAAAAAAAAAA==",
+              "Title": "BiddingLog.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\BiddingLog.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\BiddingLog.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\BiddingLog.cs",
+              "RelativeToolTip": "FinalProject\\Models\\Entities\\BiddingLog.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:33:40.568Z"
+              "WhenOpened": "2025-03-14T01:33:16.523Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "BiddingLog.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\BiddingLog.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\BiddingLog.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\BiddingLog.cs",
-              "RelativeToolTip": "FinalProject\\Models\\Entities\\BiddingLog.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBUAAAAyAAAAAAAAAA==",
+              "Title": "ProjectBid.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectBid.cs",
+              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\ProjectBid.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectBid.cs",
+              "RelativeToolTip": "FinalProject\\Models\\Entities\\ProjectBid.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:33:16.523Z"
+              "WhenOpened": "2025-03-14T01:33:02.486Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "ProjectBid.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectBid.cs",
-              "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\ProjectBid.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\ProjectBid.cs",
-              "RelativeToolTip": "FinalProject\\Models\\Entities\\ProjectBid.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:33:02.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
               "Title": "Project.cs",
-              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Project.cs",
+              "DocumentMoniker": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Project.cs",
               "RelativeDocumentMoniker": "FinalProject\\Models\\Entities\\Project.cs",
-              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Project.cs",
+              "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Models\\Entities\\Project.cs",
               "RelativeToolTip": "FinalProject\\Models\\Entities\\Project.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwBQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:32:09.75Z"
+              "WhenOpened": "2025-03-14T01:32:09.75Z",
+              "EditorCaption": ""
             }
           ]
         }
