@@ -29,6 +29,11 @@ namespace FinalProject.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(ProjectViewModel projectViewModel)
 		{
+			var submitterName = dbContext.Users
+			.Where(u => u.Id == projectViewModel.SubmitterId)
+			.Select(u => u.Name)
+			// Retrieve only the name
+			.FirstOrDefault();
 
 			var project = new Project
 			{
@@ -40,8 +45,7 @@ namespace FinalProject.Controllers
 				Status = projectViewModel.Status,
 				Funding = projectViewModel.Funding,
 				SubmitterId = projectViewModel.SubmitterId,
-				submitter = projectViewModel.submitter
-			};
+            };
 
 			await dbContext.Projects.AddAsync(project);
 			await dbContext.SaveChangesAsync();
@@ -50,7 +54,9 @@ namespace FinalProject.Controllers
 		[HttpGet]
 		public async Task<IActionResult> List()
 		{
-			var projects = await dbContext.Projects.ToListAsync();
+			var projects = await dbContext.Projects
+				.Include(p => p.submitter)
+				.ToListAsync();
 
 			return View(projects);
 		}
@@ -77,7 +83,7 @@ namespace FinalProject.Controllers
 				project.Status = projectViewModel.Status;
 				project.Funding = projectViewModel.Funding;
 				project.SubmitterId = projectViewModel.SubmitterId;
-				project.submitter = projectViewModel.submitter;
+				
 
 				await dbContext.SaveChangesAsync();
 			}

@@ -17,65 +17,65 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FinalProject
 build_property.RootNamespace = FinalProject
-build_property.ProjectDir = C:\Users\eth43\midterm\CS458Midterm-FinalProject\FinalProject\FinalProject\
+build_property.ProjectDir = C:\Users\steel\source\repos\CS458Final\CS458Midterm-FinalProject\FinalProject\FinalProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\eth43\midterm\CS458Midterm-FinalProject\FinalProject\FinalProject
+build_property.MSBuildProjectDirectory = C:\Users\steel\source\repos\CS458Final\CS458Midterm-FinalProject\FinalProject\FinalProject
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Home/Index.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Home/Privacy.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Projects/Add.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Projects/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Projects/Edit.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Projects/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Projects/List.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Projects/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Shared/Error.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Users/Add.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Users/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Users/Edit.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Users/List.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Users/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/_ViewImports.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/_ViewStart.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/eth43/midterm/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Shared/_Layout.cshtml]
+[C:/Users/steel/source/repos/CS458Final/CS458Midterm-FinalProject/FinalProject/FinalProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1iqdgs6srz

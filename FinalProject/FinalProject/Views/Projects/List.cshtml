@@ -35,7 +35,7 @@
                 <td>@project.Status</td>
                 <td>@project.Funding</td>
                 <td>@project.SubmitterId</td>
-                <td>@project.submitter</td>
+                <td>@(project.submitter != null ? project.submitter.Name : "Unknown")</td> <!-- Safely display the submitter's name -->
                 <td>
                     <a class="btn btn-primary" asp-controller="Projects" asp-action="Edit" asp-route-id="@project.Id">Edit</a>
                 </td>

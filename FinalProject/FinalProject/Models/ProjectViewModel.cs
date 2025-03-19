@@ -13,6 +13,6 @@ namespace FinalProject.Models
 		public string Status { get; set; }
         public decimal Funding { get; set; }
 		public int SubmitterId { get; set; }
-		public User submitter { get; set; }
+		
 	}
 }

@@ -19,5 +19,7 @@ namespace FinalProject.Models.Entities
         [ForeignKey("submitter")]
         public int SubmitterId { get; set; }
         public User submitter { get; set; }
+        
+
     }
 }
