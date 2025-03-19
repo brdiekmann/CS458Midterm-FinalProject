@@ -4,6 +4,7 @@ using FinalProject.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.NetworkInformation;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.Controllers
 {
@@ -28,10 +29,7 @@ namespace FinalProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(UserViewModel userViewModel)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(userViewModel);
-            }
+            
             var user = new User
             {
                 Name = userViewModel.Name,
@@ -44,8 +42,56 @@ namespace FinalProject.Controllers
 
             await dbContext.Users.AddAsync(user);
             await dbContext.SaveChangesAsync();
-            
-            return RedirectToAction("Index");
+            return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> List()
+        {
+            var users = await dbContext.Users.ToListAsync();
+
+            return View(users);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var user = await dbContext.Users.FindAsync(id);
+
+            return View(user);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(User userViewModel)
+        {
+            var user = await dbContext.Users.FindAsync(userViewModel.Id);
+
+            if (user is not null)
+            {
+                user.Name = userViewModel.Name; 
+                user.ProfilePicture = userViewModel.ProfilePicture;
+                user.Bio = userViewModel.Bio;
+                user.Email = userViewModel.Email;
+                user.Phone = userViewModel.Phone;
+
+                await dbContext.SaveChangesAsync();
+            }
+
+            return RedirectToAction("List","Users");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(User userViewModel)
+        {
+            var user = await dbContext.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x =>x.Id == userViewModel.Id);
+
+            if (user is not null)
+            {
+                dbContext.Users.Remove(userViewModel);
+                await dbContext.SaveChangesAsync();
+            }
+
+            return RedirectToAction("List", "Users");
         }
 
     }
