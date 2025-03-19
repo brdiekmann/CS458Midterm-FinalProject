@@ -1,21 +1,31 @@
 using System.Diagnostics;
 using FinalProject.Models;
+using FinalProject.Models.Entities;
+using FinalProject.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FinalProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly AppDbContext dbContext;
+        public HomeController(AppDbContext dbContext)
         {
-            _logger = logger;
+            this.dbContext = dbContext;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var users = dbContext.Users.ToList();
+            var projects = dbContext.Projects.ToList();
+            var viewModel = new HomeViewModel
+            {
+                Users = users,
+                Projects = projects
+            };
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

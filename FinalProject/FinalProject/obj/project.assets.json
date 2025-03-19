@@ -4713,19 +4713,21 @@
   },
   "packageFolders": {
     "C:\\Users\\steel\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
+      "projectUniqueName": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
       "projectName": "FinalProject",
-      "projectPath": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
+      "projectPath": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
       "packagesPath": "C:\\Users\\steel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steel\\source\\repos\\CS458Final\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\obj\\",
+      "outputPath": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\steel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4737,6 +4739,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4801,7 +4804,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

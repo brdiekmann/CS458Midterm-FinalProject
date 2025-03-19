@@ -1,8 +1,129 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model HomeViewModel
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1 style="margin-bottom: 20px; margin-top: 40px;">Users:</h1>
+<table class="table" style="margin-bottom: 30px;">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Bio</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Users.Any())  // Check if Model is not null and contains any items
+        {
+            if (Model.Users.Count() >= 3)
+            {
+                // Display only the first 3 users if there are more than 3
+                @foreach (var user in Model.Users.Take(3))
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Bio</td>
+                        <td>@user.Email</td>
+                        <td>@user.Phone</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                // If there are fewer than 3 users, display all
+                @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Bio</td>
+                        <td>@user.Email</td>
+                        <td>@user.Phone</td>
+                    </tr>
+                }
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">No users available</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Model == null)
+{
+    <p>No data available (Model is null)</p>
+}
+else if (!Model.Users.Any())
+{
+    <p>No data available (Model is empty)</p>
+}
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="Users" asp-action="List">View Full List of Users</a>
 </div>
+
+
+<h1 style="margin-bottom: 20px;margin-top: 40px;">Projects:</h1>
+<table class="table" style="margin-bottom: 30px;">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Tags</th>
+            <th>Deadline</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Projects.Any())  // Check if Model is not null and contains any items
+        {
+            if (Model.Projects.Count() >= 3)
+            {
+                // Display only the first 3 users if there are more than 3
+                @foreach (var project in Model.Projects.Take(3))
+                {
+                    <tr>
+                        <td>@project.Title</td>
+                        <td>@project.Description</td>
+                        <td>@project.Tags</td>
+                        <td>@project.Deadline</td>
+                        <td>@project.Status</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                // If there are fewer than 3 users, display all
+                @foreach (var project in Model.Projects)
+                {
+                    <tr>
+                        <td>@project.Title</td>
+                        <td>@project.Description</td>
+                        <td>@project.Tags</td>
+                        <td>@project.Deadline</td>
+                        <td>@project.Status</td>
+                    </tr>
+                }
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">No projects available</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Model == null)
+{
+    <p>No data available (Model is null)</p>
+}
+else if (!Model.Projects.Any())
+{
+    <p>No data available (Model is empty)</p>
+}
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="Projects" asp-action="List">View Full List of Projects</a>
+</div>
+
