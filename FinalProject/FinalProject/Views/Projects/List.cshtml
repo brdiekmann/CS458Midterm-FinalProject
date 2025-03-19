@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<FinalProject.Models.Entities.Project>
+
+<h1>Projects:</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Tags</th>
+            <th>Deadline</th>
+            <th>Technology</th>
+            <th>Status</th>
+            <th>Funding</th>
+            <th>Submitter ID</th>
+            <th>Submitter</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Id</td>
+                <td>@project.Title</td>
+                <td>@project.Description</td>
+                <td>@project.Tags</td>
+                <td>@project.Deadline</td>
+                <td>@project.Technology</td>
+                <td>@project.Status</td>
+                <td>@project.Funding</td>
+                <td>@project.SubmitterId</td>
+                <td>@project.submitter</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Projects" asp-action="Edit" asp-route-id="@project.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

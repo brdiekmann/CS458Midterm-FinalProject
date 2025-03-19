@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\FinalProject",
-    "\\FinalProject\\FinalProject"
+    "\\FinalProject\\FinalProject",
+    "\\FinalProject\\FinalProject\\Data"
   ],
-  "SelectedNode": "\\FinalProject\\FinalProject\\Program.cs",
+  "SelectedNode": "\\FinalProject\\FinalProject\\Data\\AppDbContext.cs",
   "PreviewInSolutionExplorer": false
 }
