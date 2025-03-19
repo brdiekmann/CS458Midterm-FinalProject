@@ -142,8 +142,7 @@
               "RelativeToolTip": "FinalProject\\Models\\HomeViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:34:02.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T17:34:02.173Z"
             },
             {
               "$type": "Document",
@@ -155,8 +154,7 @@
               "RelativeToolTip": "FinalProject\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T17:14:22.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T17:14:22.234Z"
             },
             {
               "$type": "Document",
@@ -168,8 +166,7 @@
               "RelativeToolTip": "FinalProject\\Controllers\\UsersController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAAAC4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:12:35.289Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T17:12:35.289Z"
             },
             {
               "$type": "Document",
@@ -179,7 +176,7 @@
               "RelativeDocumentMoniker": "FinalProject\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\steel\\source\\repos\\CS458FinProj\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "FinalProject\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAkwAUAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-19T00:13:37.293Z",
               "EditorCaption": ""
@@ -194,8 +191,7 @@
               "RelativeToolTip": "FinalProject\\Models\\ProjectViewModel.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwA8AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T02:04:05.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T02:04:05.789Z"
             },
             {
               "$type": "Document",
@@ -207,8 +203,7 @@
               "RelativeToolTip": "FinalProject\\Views\\Users\\List.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T00:31:46.147Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T00:31:46.147Z"
             },
             {
               "$type": "Document",
@@ -220,8 +215,7 @@
               "RelativeToolTip": "FinalProject\\Controllers\\ProjectsController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwA0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:13:25.484Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T17:13:25.484Z"
             },
             {
               "$type": "Document",
@@ -233,8 +227,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Entities\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:31:47.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:31:47.242Z"
             },
             {
               "$type": "Document",
@@ -246,8 +239,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Entities\\ProjectLog.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwBYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:33:40.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:33:40.568Z"
             },
             {
               "$type": "Document",
@@ -259,8 +251,7 @@
               "RelativeToolTip": "FinalProject\\Views\\Projects\\List.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T03:02:21.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T03:02:21.222Z"
             },
             {
               "$type": "Document",
@@ -272,8 +263,7 @@
               "RelativeToolTip": "FinalProject\\Views\\Users\\Add.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-17T17:19:11.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T17:19:11.548Z"
             },
             {
               "$type": "Document",
@@ -285,8 +275,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Entities\\ProjectBid.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:33:02.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:33:02.486Z"
             },
             {
               "$type": "Document",
@@ -298,8 +287,7 @@
               "RelativeToolTip": "FinalProject\\Views\\Projects\\Edit.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAADEAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T02:58:53.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T02:58:53.467Z"
             },
             {
               "$type": "Document",
@@ -311,8 +299,7 @@
               "RelativeToolTip": "FinalProject\\Views\\Projects\\Add.cshtml",
               "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T02:26:15.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T02:26:15.768Z"
             },
             {
               "$type": "Document",
@@ -324,8 +311,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Entities\\Project.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwBQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:32:09.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:32:09.75Z"
             },
             {
               "$type": "Document",
@@ -337,8 +323,7 @@
               "RelativeToolTip": "FinalProject\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAIBJwBsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T03:26:17.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T03:26:17.946Z"
             },
             {
               "$type": "Document",
@@ -350,8 +335,7 @@
               "RelativeToolTip": "FinalProject\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:53:33.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:53:33.262Z"
             },
             {
               "$type": "Document",
@@ -363,8 +347,7 @@
               "RelativeToolTip": "FinalProject\\Controllers\\AttachmentsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:15:41.266Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T17:15:41.266Z"
             },
             {
               "$type": "Document",
@@ -376,8 +359,7 @@
               "RelativeToolTip": "FinalProject\\Models\\UserViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T18:11:14.541Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T18:11:14.541Z"
             },
             {
               "$type": "Document",
@@ -389,8 +371,7 @@
               "RelativeToolTip": "FinalProject\\Views\\Users\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-19T01:05:02.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T01:05:02.309Z"
             },
             {
               "$type": "Document",
@@ -402,8 +383,7 @@
               "RelativeToolTip": "FinalProject\\Migrations\\20250319015627_Migration2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T01:56:28.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T01:56:28.598Z"
             },
             {
               "$type": "Document",
@@ -415,8 +395,7 @@
               "RelativeToolTip": "FinalProject\\Controllers\\ProjectBidsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:14:13.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T17:14:13.097Z"
             },
             {
               "$type": "Document",
@@ -428,8 +407,7 @@
               "RelativeToolTip": "FinalProject\\Controllers\\BiddingLogController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T17:14:48.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T17:14:48.792Z"
             },
             {
               "$type": "Document",
@@ -441,8 +419,7 @@
               "RelativeToolTip": "FinalProject\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T02:01:16.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T02:01:16.508Z"
             },
             {
               "$type": "Document",
@@ -454,8 +431,7 @@
               "RelativeToolTip": "FinalProject\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-14T01:59:38.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:59:38.157Z"
             },
             {
               "$type": "Document",
@@ -467,8 +443,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Entities\\Attachment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:34:21.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:34:21.058Z"
             },
             {
               "$type": "Document",
@@ -480,8 +455,7 @@
               "RelativeToolTip": "FinalProject\\Models\\Entities\\BiddingLog.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwBUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T01:33:16.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T01:33:16.523Z"
             }
           ]
         }
