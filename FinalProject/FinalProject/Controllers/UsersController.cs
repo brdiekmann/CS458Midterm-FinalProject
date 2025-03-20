@@ -27,9 +27,10 @@ namespace FinalProject.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Add(UserViewModel userViewModel)
+        public async Task<IActionResult> Add(User userViewModel)
         {
-            
+            if (!ModelState.IsValid) return View(userViewModel);
+
             var user = new User
             {
                 Name = userViewModel.Name,
@@ -62,6 +63,7 @@ namespace FinalProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(User userViewModel)
         {
+            if (!ModelState.IsValid) return View(userViewModel);
             var user = await dbContext.Users.FindAsync(userViewModel.Id);
 
             if (user is not null)
@@ -81,6 +83,7 @@ namespace FinalProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(User userViewModel)
         {
+
             var user = await dbContext.Users
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x =>x.Id == userViewModel.Id);
