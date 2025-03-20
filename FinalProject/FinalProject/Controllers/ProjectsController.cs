@@ -29,7 +29,8 @@ namespace FinalProject.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(ProjectViewModel projectViewModel)
 		{
-			var submitterName = dbContext.Users
+
+            var submitterName = dbContext.Users
 			.Where(u => u.Id == projectViewModel.SubmitterId)
 			.Select(u => u.Name)
 			// Retrieve only the name
@@ -71,7 +72,7 @@ namespace FinalProject.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Edit(Project projectViewModel)
 		{
-			var project = await dbContext.Projects.FindAsync(projectViewModel.Id);
+            var project = await dbContext.Projects.FindAsync(projectViewModel.Id);
 
 			if (project is not null)
 			{

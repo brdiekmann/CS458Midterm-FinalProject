@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 @model HomeViewModel
-
+<!---Home Page User Table-->
 <h1 style="margin-bottom: 20px; margin-top: 40px;">Users:</h1>
 <table class="table" style="margin-bottom: 20px;">
     <thead>
@@ -63,7 +63,7 @@ else if (!Model.Users.Any())
     <a class="btn btn-primary" asp-controller="Users" asp-action="List">View Full List of Users</a>
 </div>
 
-
+<!--Home Page Project Table-->
 <h1 style="margin-bottom: 20px;margin-top: 40px;">Projects:</h1>
 <table class="table" style="margin-bottom: 20px;">
     <thead>
@@ -127,3 +127,131 @@ else if (!Model.Projects.Any())
     <a class="btn btn-primary" asp-controller="Projects" asp-action="List">View Full List of Projects</a>
 </div>
 
+
+<!--Home page BiddingLog Table-->
+<h1 style="margin-bottom: 20px; margin-top: 40px;">Bidding Logs:</h1>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Status</th>
+            <th>Operation</th>
+            <th>Note</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.BiddingLogs.Any())  // Check if Model is not null and contains any items
+        {
+            if (Model.BiddingLogs.Count() >= 3)
+            {
+                // Display only the first 3 users if there are more than 3
+                @foreach (var biddinglog in Model.BiddingLogs.Take(3))
+                {
+                    <tr>
+                        <td>@biddinglog.Status</td>
+                        <td>@biddinglog.Operation</td>
+                        <td>@biddinglog.Note</td>
+                        <td>@biddinglog.Timestamp</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                // If there are fewer than 3 users, display all
+                @foreach (var biddinglog in Model.BiddingLogs)
+                {
+                    <tr>
+                        <td>@biddinglog.Status</td>
+                        <td>@biddinglog.Operation</td>
+                        <td>@biddinglog.Note</td>
+                        <td>@biddinglog.Timestamp</td>
+                    </tr>
+                }
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">No bidding logs available</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Model == null)
+{
+    <p>No data available (Model is null)</p>
+}
+else if (!Model.BiddingLogs.Any())
+{
+    <p>No data available (Model is empty)</p>
+}
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="BiddingLogs" asp-action="List">View Full List of Bidding Logs</a>
+</div>
+
+<!--Home page ProjectLog Table-->
+<h1 style="margin-bottom: 20px; margin-top: 40px;">Project Logs:</h1>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Status</th>
+            <th>User ID</th>
+            <th>Operation</th>
+            <th>Note</th>
+            <th>Timestamp</th>
+            <th>Project ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.ProjectLogs.Any())  // Check if Model is not null and contains any items
+        {
+            if (Model.ProjectLogs.Count() >= 3)
+            {
+                // Display only the first 3 projectlogs if there are more than 3
+                @foreach (var projectlog in Model.ProjectLogs.Take(3))
+                {
+                    <tr>
+                        <td>@projectlog.Status</td>
+                        <td>@projectlog.OperatorId</td>
+                        <td>@projectlog.Operation</td>
+                        <td>@projectlog.Note</td>
+                        <td>@projectlog.Timestamp</td>
+                        <td>@projectlog.ProjectId</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                // If there are fewer than 3 projectlogs, display all
+                @foreach (var projectlog in Model.ProjectLogs)
+                {
+                    <tr>
+                        <td>@projectlog.Status</td>
+                        <td>@projectlog.OperatorId</td>
+                        <td>@projectlog.Operation</td>
+                        <td>@projectlog.Note</td>
+                        <td>@projectlog.Timestamp</td>
+                        <td>@projectlog.ProjectId</td>
+                    </tr>
+                }
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">No project logs available</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Model == null)
+{
+    <p>No data available (Model is null)</p>
+}
+else if (!Model.ProjectLogs.Any())
+{
+    <p>No data available (Model is empty)</p>
+}
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="ProjectLogs" asp-action="List">View Full List of Project Logs</a>
+</div>

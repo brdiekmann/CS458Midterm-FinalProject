@@ -7,5 +7,7 @@ namespace FinalProject.Models
     {
         public List<User> Users { get; set; }
         public List<Project> Projects { get; set; }
+        public List<BiddingLog> BiddingLogs { get; set; }
+        public List<ProjectLog> ProjectLogs { get; set; }
     }
 }

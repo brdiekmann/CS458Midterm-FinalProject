@@ -20,10 +20,14 @@ namespace FinalProject.Controllers
         {
             var users = dbContext.Users.ToList();
             var projects = dbContext.Projects.ToList();
+            var biddinglogs = dbContext.BiddingLogs.ToList();
+            var projectlogs = dbContext.ProjectLogs.ToList();
             var viewModel = new HomeViewModel
             {
                 Users = users,
-                Projects = projects
+                Projects = projects,
+                BiddingLogs = biddinglogs,
+                ProjectLogs = projectlogs
             };
             return View(viewModel);
         }
