@@ -9,10 +9,10 @@ namespace FinalProject.Data
         //DbSets for the Models
         public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
-        public DbSet<ProjectBid> projectBids { get; set; }
-        public DbSet<BiddingLog> biddingLog { get; set; }
-        public DbSet<ProjectLog> projectLogs { get; set; }
-        public DbSet<Attachment> attachments { get; set; }
+        public DbSet<ProjectBid> ProjectBids { get; set; }
+        public DbSet<BiddingLog> BiddingLog { get; set; }
+        public DbSet<ProjectLog> ProjectLogs { get; set; }
+        public DbSet<Attachment> Attachments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

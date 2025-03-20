@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\L\\Desktop\\Stuff\\school\\AdvancedProgramming\\Midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj": {}
+    "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\L\\Desktop\\Stuff\\school\\AdvancedProgramming\\Midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj": {
+    "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\L\\Desktop\\Stuff\\school\\AdvancedProgramming\\Midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
         "projectName": "FinalProject",
-        "projectPath": "C:\\Users\\L\\Desktop\\Stuff\\school\\AdvancedProgramming\\Midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
-        "packagesPath": "C:\\Users\\L\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\L\\Desktop\\Stuff\\school\\AdvancedProgramming\\Midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\obj\\",
+        "projectPath": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\FinalProject.csproj",
+        "packagesPath": "C:\\Users\\eth43\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eth43\\midterm\\CS458Midterm-FinalProject\\FinalProject\\FinalProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\L\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eth43\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
