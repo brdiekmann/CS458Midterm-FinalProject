@@ -257,7 +257,7 @@ else if (!Model.ProjectLogs.Any())
 </div>
 
 <!--Home page Attachments Table-->
-<h1 style="margin-bottom: 20px; margin-top: 40px;">Project Logs:</h1>
+<h1 style="margin-bottom: 20px; margin-top: 40px;">Attachments:</h1>
 <table class="table" style="margin-bottom: 20px;">
     <thead>
         <tr>
@@ -319,3 +319,74 @@ else if (!Model.ProjectLogs.Any())
 <div class="mt-3">
     <a class="btn btn-primary" asp-controller="Attachments" asp-action="List">View Full List of Attachments</a>
 </div>
+
+<!--Home page ProjectBids Table-->
+<h1 style="margin-bottom: 20px; margin-top: 40px;">Project Bids:</h1>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Bidder</th>
+            <th>Status</th>
+            <th>Note</th>
+            <th>Proposal</th>
+            <th>Timeline</th>
+            <th>Submitted Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.ProjectBids.Any())  // Check if Model is not null and contains any items
+        {
+            if (Model.ProjectBids.Count() >= 3)
+            {
+                // Display only the first 3 projectlogs if there are more than 3
+                @foreach (var projectbid in Model.ProjectBids.Take(3))
+                {
+                    <tr>
+                        <td>@projectbid.project</td>
+                        <td>@projectbid.bidder</td>
+                        <td>@projectbid.Status</td>
+                        <td>@projectbid.Note</td>
+                        <td>@projectbid.Proposal</td>
+                        <td>@projectbid.Timeline</td>
+                        <td>@projectbid.SubmittedTime</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                // If there are fewer than 3 projectlogs, display all
+                @foreach (var projectbid in Model.ProjectBids)
+                {
+                    <tr>
+                        <td>@projectbid.project</td>
+                        <td>@projectbid.bidder</td>
+                        <td>@projectbid.Status</td>
+                        <td>@projectbid.Note</td>
+                        <td>@projectbid.Proposal</td>
+                        <td>@projectbid.Timeline</td>
+                        <td>@projectbid.SubmittedTime</td>
+                    </tr>
+                }
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">No project bids available</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Model == null)
+{
+    <p>No data available (Model is null)</p>
+}
+else if (!Model.ProjectLogs.Any())
+{
+    <p>No data available (Model is empty)</p>
+}
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="ProjectBids" asp-action="List">View Full List of Project Bids</a>
+</div>
+
