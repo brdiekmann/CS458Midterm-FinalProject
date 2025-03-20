@@ -255,3 +255,67 @@ else if (!Model.ProjectLogs.Any())
 <div class="mt-3">
     <a class="btn btn-primary" asp-controller="ProjectLogs" asp-action="List">View Full List of Project Logs</a>
 </div>
+
+<!--Home page Attachments Table-->
+<h1 style="margin-bottom: 20px; margin-top: 40px;">Project Logs:</h1>
+<table class="table" style="margin-bottom: 20px;">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>LastModifiedTimestamp</th>
+            <th>Project ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Attachments.Any())  // Check if Model is not null and contains any items
+        {
+            if (Model.Attachments.Count() >= 3)
+            {
+                // Display only the first 3 projectlogs if there are more than 3
+                @foreach (var attachment in Model.Attachments.Take(3))
+                {
+                    <tr>
+                        <td>@attachment.Type</td>
+                        <td>@attachment.Name</td>
+                        <td>@attachment.Location</td>
+                        <td>@attachment.LastModifiedTimestamp</td>
+                        <td>@attachment.ProjectId</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                // If there are fewer than 3 projectlogs, display all
+                @foreach (var attachment in Model.Attachments)
+                {
+                    <tr>
+                        <td>@attachment.Type</td>
+                        <td>@attachment.Name</td>
+                        <td>@attachment.Location</td>
+                        <td>@attachment.LastModifiedTimestamp</td>
+                        <td>@attachment.ProjectId</td>
+                    </tr>
+                }
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">No attachments available</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@if (Model == null)
+{
+    <p>No data available (Model is null)</p>
+}
+else if (!Model.ProjectLogs.Any())
+{
+    <p>No data available (Model is empty)</p>
+}
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="Attachments" asp-action="List">View Full List of Attachments</a>
+</div>

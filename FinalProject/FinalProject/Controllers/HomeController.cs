@@ -30,7 +30,7 @@ namespace FinalProject.Controllers
                 ProjectLogs = projectlogs
             };
             return View(viewModel);
-        }
+}
 
         public IActionResult Privacy()
         {
