@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<FinalProject.Models.Entities.BiddingLog>
+
+<h1>Bidding Logs:</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Status</th>
+            <th>Operation</th>
+            <th>Note</th>
+            <th>Timestamp</th>
+            <th>OperatorId</th>
+            <th>ProjectBidId</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var biddinglog in Model)
+        {
+            <tr>
+                <td>@biddinglog.Id</td>
+                <td>@biddinglog.Status</td>
+                <td>@biddinglog.Operation</td>
+                <td>@biddinglog.Note</td>
+                <td>@biddinglog.Timestamp</td>
+                <td>@biddinglog.OperatorId</td>
+                <td>@biddinglog.ProjectBidId</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="BiddingLogs" asp-action="Edit" asp-route-id="@biddinglog.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="mt-3">
+    <a class="btn btn-primary" asp-controller="BiddingLogs" asp-action="Add">Add Bidding Log</a>
+</div>
