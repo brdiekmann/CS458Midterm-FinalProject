@@ -22,12 +22,16 @@ namespace FinalProject.Controllers
             var projects = dbContext.Projects.ToList();
             var biddinglogs = dbContext.BiddingLogs.ToList();
             var projectlogs = dbContext.ProjectLogs.ToList();
+            var attachments = dbContext.Attachments.ToList();
+            var projectbids = dbContext.ProjectBids.ToList();
             var viewModel = new HomeViewModel
             {
                 Users = users,
                 Projects = projects,
                 BiddingLogs = biddinglogs,
-                ProjectLogs = projectlogs
+                ProjectLogs = projectlogs,
+                Attachments = attachments,
+                ProjectBids = projectbids
             };
             return View(viewModel);
         }
