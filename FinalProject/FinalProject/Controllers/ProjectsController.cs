@@ -24,29 +24,40 @@ namespace FinalProject.Controllers
 		[HttpGet]
 		public IActionResult Add()
 		{
-			return View();
-		}
+            var model = new ProjectViewModel
+            {
+                Project = new Project(),
+                Users = dbContext.Users.ToList()
+                
+            };
+
+            return View(model);
+        }
 		[HttpPost]
 		public async Task<IActionResult> Add(ProjectViewModel projectViewModel)
 		{
-            if (!ModelState.IsValid) return View(projectViewModel);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Users = await dbContext.Users.ToListAsync();
+                return View(projectViewModel);
+            }
 
             var submitterName = dbContext.Users
-			.Where(u => u.Id == projectViewModel.SubmitterId)
+			.Where(u => u.Id == projectViewModel.Project.SubmitterId)
 			.Select(u => u.Name)
 			// Retrieve only the name
 			.FirstOrDefault();
 
 			var project = new Project
 			{
-				Title = projectViewModel.Title,
-				Description = projectViewModel.Description,
-				Tags = projectViewModel.Tags,
-				Deadline = projectViewModel.Deadline,
-				Technology = projectViewModel.Technology,
-				Status = projectViewModel.Status,
-				Funding = projectViewModel.Funding,
-				SubmitterId = projectViewModel.SubmitterId,
+				Title = projectViewModel.Project.Title,
+				Description = projectViewModel.Project.Description,
+				Tags = projectViewModel.Project.Tags,
+				Deadline = projectViewModel.Project.Deadline,
+				Technology = projectViewModel.Project.Technology,
+				Status = projectViewModel.Project.Status,
+				Funding = projectViewModel.Project.Funding,
+				SubmitterId = projectViewModel.Project.SubmitterId,
             };
 
             TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
@@ -70,7 +81,9 @@ namespace FinalProject.Controllers
 		{
 			var project = await dbContext.Projects.FindAsync(id);
 
-			return View(project);
+            ViewBag.Users = dbContext.Users.ToList();
+
+            return View(project);
 		}
 		[HttpPost]
 		public async Task<IActionResult> Edit(Project projectViewModel)
