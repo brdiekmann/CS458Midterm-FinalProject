@@ -1,4 +1,5 @@
-﻿@*
+﻿@using FinalProject.Models.Entities
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -21,27 +22,52 @@
     
     <div class="mt-3">
         <label class="form-label">Status:</label>
-        <input type="text" class="form-control" asp-for="Status" />
+        <select asp-for="ProjectLog.Status" class="form-control">
+        <option value="">Select Status</option>
+            <option value="Active">@(Model.ProjectLog.Status == "Active" ? "selected" : "")Active</option>
+            <option value="Inactive"> @(Model.ProjectLog.Status == "Inactive" ? "selected" : "")Inactive</option>
+            <option value="On Hold">@(Model.ProjectLog.Status == "On Hold" ? "selected" : "")On Hold</option>
+        </select>
+        <span asp-validation-for="ProjectLog.Status" class="text-danger"></span>
     </div>
     <div class="mt-3">
         <label class="form-label">User Id:</label>
-        <input type="text" class="form-control" asp-for="OperatorId" />
+        <select asp-for="ProjectLog.OperatorId" class="form-control">
+            <option value="">Select User</option>
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Id">@user.Name</option>
+            }
+        </select>
+        <span asp-validation-for="ProjectLog.OperatorId" class="text-danger"></span>
     </div>
     <div class="mt-3">
         <label class="form-label">Operation:</label>
-        <input type="text" class="form-control" asp-for="Operation" />
+        <select asp-for="ProjectLog.Operation" class="form-control">
+            <option value="">Select Operation</option>
+            <option value="Regular">@(Model.ProjectLog.Operation == "Regular" ? "selected" : "")Regular</option>
+            <option value="Unique">@(Model.ProjectLog.Operation == "Unique" ? "selected" : "")Unique</option>
+        </select>
+        <span asp-validation-for="ProjectLog.Operation" class="text-danger"></span>
     </div>
     <div class="mt-3">
         <label class="form-label">Note:</label>
-        <input type="text" class="form-control" asp-for="Note" />
+        <input type="text" class="form-control" asp-for="ProjectLog.Note" />
     </div>
     <div class="mt-3">
         <label class="form-label">Timestamp:</label>
-        <input type="datetime-local" class="form-control" asp-for="Timestamp" />
+        <input type="datetime-local" class="form-control" asp-for="ProjectLog.Timestamp" />
     </div>
     <div class="mt-3">
         <label class="form-label">Project ID:</label>
-        <input type="text" class="form-control" asp-for="ProjectId" />
+        <select asp-for="ProjectLog.ProjectId" class="form-control">
+            <option value="">Select Project</option>
+            @foreach (var project in Model.Projects)
+            {
+                <option value="@project.Id">@project.Title</option>
+            }
+        </select>
+        <span asp-validation-for="ProjectLog.ProjectId" class="text-danger"></span>
     </div>
 
     <div class="mt-3">

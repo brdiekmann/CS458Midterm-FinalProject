@@ -24,27 +24,41 @@ namespace FinalProject.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View();
+            var model = new ProjectLogViewModel
+            {
+                ProjectLog = new ProjectLog(),
+                Users = dbContext.Users.ToList(),
+                Projects = dbContext.Projects.ToList()
+            };
+
+            return View(model);
         }
         [HttpPost]
         public async Task<IActionResult> Add(ProjectLogViewModel projectLogModel)
         {
-            if (!ModelState.IsValid) return View(projectLogModel);
+            if (!ModelState.IsValid) { 
+                projectLogModel.Users = dbContext.Users.ToList();
+                projectLogModel.Projects = dbContext.Projects.ToList();
+                return View(projectLogModel);
+            }
 
             var projectLog = new ProjectLog
             {
-                Status = projectLogModel.Status,
-                OperatorId = projectLogModel.OperatorId,
-                Operation = projectLogModel.Operation,
-                Note = projectLogModel.Note,
-                Timestamp = projectLogModel.Timestamp,
-                ProjectId = projectLogModel.ProjectId
+                Status = projectLogModel.ProjectLog.Status,
+                OperatorId = projectLogModel.ProjectLog.OperatorId,
+                Operation = projectLogModel.ProjectLog.Operation,
+                Note = projectLogModel.ProjectLog.Note,
+                Timestamp = projectLogModel.ProjectLog.Timestamp,
+                ProjectId = projectLogModel.ProjectLog.ProjectId
 
             };
 
             await dbContext.ProjectLogs.AddAsync(projectLog);
             await dbContext.SaveChangesAsync();
-            return RedirectToAction("List", "ProjectLogs");
+
+            TempData["SuccessMessage"] = "Project Log (ID:" + projectLog.Id + ") added successfully.";
+
+            return RedirectToAction("List");
         }
         [HttpGet]
         public async Task<IActionResult> List()
@@ -57,29 +71,43 @@ namespace FinalProject.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var projectLog = await dbContext.ProjectLogs.FindAsync(id);
+            var projectLog = await dbContext.ProjectLogs
+                                    .Include(pl => pl.operatorId)
+                                    .Include(pl => pl.project)
+                                    .FirstOrDefaultAsync(pl => pl.Id == id);
+
+            if (projectLog == null) return NotFound();
+
+            ViewBag.Users = dbContext.Users.ToList();
+            ViewBag.Projects = dbContext.Projects.ToList();
 
             return View(projectLog);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(ProjectLog projectLogModel)
         {
-            var projectlog = await dbContext.ProjectLogs.FindAsync(projectLogModel.Id);
-
-            if (projectlog is not null)
+            if (!ModelState.IsValid)
             {
-                projectlog.Status = projectLogModel.Status;
-                projectlog.OperatorId = projectLogModel.OperatorId;
-                projectlog.Operation = projectLogModel.Operation;
-                projectlog.Note = projectLogModel.Note;
-                projectlog.Timestamp = projectLogModel.Timestamp;
-                projectlog.ProjectId = projectLogModel.ProjectId;
-
-                await dbContext.SaveChangesAsync();
+                ViewBag.Users = await dbContext.Users.ToListAsync();
+                ViewBag.Projects = await dbContext.Projects.ToListAsync();
+                return View(projectLogModel);
             }
-            
 
-            return RedirectToAction("List", "ProjectLogs");
+            var projectlog = await dbContext.ProjectLogs.FindAsync(projectLogModel.Id);
+            if (projectlog == null) return NotFound();
+
+            projectlog.Status = projectLogModel.Status;
+            projectlog.OperatorId = projectLogModel.OperatorId;
+            projectlog.Operation = projectLogModel.Operation;
+            projectlog.Note = projectLogModel.Note;
+            projectlog.Timestamp = projectLogModel.Timestamp;
+            projectlog.ProjectId = projectLogModel.ProjectId;
+
+            await dbContext.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Project Log (ID:" + projectlog.Id + ") edited successfully.";
+
+            return RedirectToAction("List");
         }
 
         [HttpPost]
@@ -95,7 +123,7 @@ namespace FinalProject.Controllers
                 await dbContext.SaveChangesAsync();
             }
 
-            return RedirectToAction("List", "ProjectLogs");
+            return RedirectToAction("List");
         }
     }
 }
