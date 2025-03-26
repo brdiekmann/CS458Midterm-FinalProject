@@ -26,6 +26,7 @@ namespace FinalProject.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Add(User userViewModel)
         {
@@ -43,7 +44,10 @@ namespace FinalProject.Controllers
 
             await dbContext.Users.AddAsync(user);
             await dbContext.SaveChangesAsync();
-            return View();
+
+            TempData["SuccessMessage"] = "User " + user.Name + " (ID: " + user.Id + ") added successfully!";
+
+            return RedirectToAction("List");
         }
         [HttpGet]
         public async Task<IActionResult> List()
@@ -77,13 +81,14 @@ namespace FinalProject.Controllers
                 await dbContext.SaveChangesAsync();
             }
 
-            return RedirectToAction("List","Users");
+            TempData["SuccessMessage"] = "User " + user.Name + " (ID: " + user.Id + ") edited successfully!";
+
+            return RedirectToAction("List");
         }
 
         [HttpPost]
         public async Task<IActionResult> Delete(User userViewModel)
         {
-
             var user = await dbContext.Users
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x =>x.Id == userViewModel.Id);
@@ -94,7 +99,7 @@ namespace FinalProject.Controllers
                 await dbContext.SaveChangesAsync();
             }
 
-            return RedirectToAction("List", "Users");
+            return RedirectToAction("List");
         }
 
     }

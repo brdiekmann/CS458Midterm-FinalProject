@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250318233305_Initial Final Project Migration")]
-    partial class InitialFinalProjectMigration
+    [Migration("20250320051343_InitMigration")]
+    partial class InitMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,7 +55,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("attachments");
+                    b.ToTable("Attachments");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.BiddingLog", b =>
@@ -93,7 +93,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectBidId");
 
-                    b.ToTable("biddingLog");
+                    b.ToTable("BiddingLogs");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.Project", b =>
@@ -179,7 +179,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("projectBids");
+                    b.ToTable("ProjectBids");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.ProjectLog", b =>
@@ -217,7 +217,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("projectLogs");
+                    b.ToTable("ProjectLogs");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.User", b =>
@@ -249,7 +249,6 @@ namespace FinalProject.Migrations
                         .HasColumnType("nvarchar(12)");
 
                     b.Property<string>("ProfilePicture")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

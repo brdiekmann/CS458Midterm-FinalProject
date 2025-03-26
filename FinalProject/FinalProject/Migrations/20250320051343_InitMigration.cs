@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinalProject.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,11 +17,11 @@ namespace FinalProject.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    ProfilePicture = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Bio = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,7 +55,7 @@ namespace FinalProject.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "attachments",
+                name: "Attachments",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -68,9 +68,9 @@ namespace FinalProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_attachments", x => x.Id);
+                    table.PrimaryKey("PK_Attachments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_attachments_Projects_ProjectId",
+                        name: "FK_Attachments_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
                         principalColumn: "Id",
@@ -78,7 +78,7 @@ namespace FinalProject.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "projectBids",
+                name: "ProjectBids",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -93,23 +93,23 @@ namespace FinalProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_projectBids", x => x.Id);
+                    table.PrimaryKey("PK_ProjectBids", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_projectBids_Projects_ProjectId",
+                        name: "FK_ProjectBids_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_projectBids_Users_BidderId",
+                        name: "FK_ProjectBids_Users_BidderId",
                         column: x => x.BidderId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "projectLogs",
+                name: "ProjectLogs",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -123,23 +123,23 @@ namespace FinalProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_projectLogs", x => x.Id);
+                    table.PrimaryKey("PK_ProjectLogs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_projectLogs_Projects_ProjectId",
+                        name: "FK_ProjectLogs_Projects_ProjectId",
                         column: x => x.ProjectId,
                         principalTable: "Projects",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_projectLogs_Users_OperatorId",
+                        name: "FK_ProjectLogs_Users_OperatorId",
                         column: x => x.OperatorId,
                         principalTable: "Users",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "biddingLog",
+                name: "BiddingLogs",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -153,54 +153,54 @@ namespace FinalProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_biddingLog", x => x.Id);
+                    table.PrimaryKey("PK_BiddingLogs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_biddingLog_Users_OperatorId",
+                        name: "FK_BiddingLogs_ProjectBids_ProjectBidId",
+                        column: x => x.ProjectBidId,
+                        principalTable: "ProjectBids",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_BiddingLogs_Users_OperatorId",
                         column: x => x.OperatorId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_biddingLog_projectBids_ProjectBidId",
-                        column: x => x.ProjectBidId,
-                        principalTable: "projectBids",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_attachments_ProjectId",
-                table: "attachments",
+                name: "IX_Attachments_ProjectId",
+                table: "Attachments",
                 column: "ProjectId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_biddingLog_OperatorId",
-                table: "biddingLog",
+                name: "IX_BiddingLogs_OperatorId",
+                table: "BiddingLogs",
                 column: "OperatorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_biddingLog_ProjectBidId",
-                table: "biddingLog",
+                name: "IX_BiddingLogs_ProjectBidId",
+                table: "BiddingLogs",
                 column: "ProjectBidId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_projectBids_BidderId",
-                table: "projectBids",
+                name: "IX_ProjectBids_BidderId",
+                table: "ProjectBids",
                 column: "BidderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_projectBids_ProjectId",
-                table: "projectBids",
+                name: "IX_ProjectBids_ProjectId",
+                table: "ProjectBids",
                 column: "ProjectId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_projectLogs_OperatorId",
-                table: "projectLogs",
+                name: "IX_ProjectLogs_OperatorId",
+                table: "ProjectLogs",
                 column: "OperatorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_projectLogs_ProjectId",
-                table: "projectLogs",
+                name: "IX_ProjectLogs_ProjectId",
+                table: "ProjectLogs",
                 column: "ProjectId");
 
             migrationBuilder.CreateIndex(
@@ -213,16 +213,16 @@ namespace FinalProject.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "attachments");
+                name: "Attachments");
 
             migrationBuilder.DropTable(
-                name: "biddingLog");
+                name: "BiddingLogs");
 
             migrationBuilder.DropTable(
-                name: "projectLogs");
+                name: "ProjectLogs");
 
             migrationBuilder.DropTable(
-                name: "projectBids");
+                name: "ProjectBids");
 
             migrationBuilder.DropTable(
                 name: "Projects");
