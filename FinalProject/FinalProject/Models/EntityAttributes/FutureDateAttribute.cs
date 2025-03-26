@@ -2,14 +2,14 @@
 
 namespace FinalProject.Models.EntityAttributes
 {
-    public class FutureDateAttribute : Attribute
+    public class FutureDateAttribute : ValidationAttribute
     {
         public required string ErrorMessge { get; set; }
-        protected ValidationResult IsValid(object value, ValidationContext validationContext)
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             if (value is DateTime deadline)
             {
-                if (deadline >= DateTime.Now.AddDays(7))
+                if (deadline >= DateTime.Today.AddDays(7))
                 {
                     return ValidationResult.Success;
                 }
@@ -18,7 +18,10 @@ namespace FinalProject.Models.EntityAttributes
                     return new ValidationResult("Deadline must be at least 7 days in the future.");
                 }
             }
-            return new ValidationResult("Invalid date.");
+            else
+            {
+                return new ValidationResult("Invalid date.");
+            }
         }
     }
 }
