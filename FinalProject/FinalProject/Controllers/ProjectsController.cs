@@ -29,6 +29,7 @@ namespace FinalProject.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Add(ProjectViewModel projectViewModel)
 		{
+            if (!ModelState.IsValid) return View(projectViewModel);
 
             var submitterName = dbContext.Users
 			.Where(u => u.Id == projectViewModel.SubmitterId)
@@ -48,9 +49,11 @@ namespace FinalProject.Controllers
 				SubmitterId = projectViewModel.SubmitterId,
             };
 
-			await dbContext.Projects.AddAsync(project);
+            TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
+
+            await dbContext.Projects.AddAsync(project);
 			await dbContext.SaveChangesAsync();
-			return View();
+			return RedirectToAction("List");
 		}
 		[HttpGet]
 		public async Task<IActionResult> List()
@@ -72,6 +75,7 @@ namespace FinalProject.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Edit(Project projectViewModel)
 		{
+            if (!ModelState.IsValid) return View(projectViewModel);
             var project = await dbContext.Projects.FindAsync(projectViewModel.Id);
 
 			if (project is not null)
@@ -89,7 +93,9 @@ namespace FinalProject.Controllers
 				await dbContext.SaveChangesAsync();
 			}
 
-			return RedirectToAction("List", "Projects");
+            TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
+
+            return RedirectToAction("List", "Projects");
 		}
 
 		[HttpPost]

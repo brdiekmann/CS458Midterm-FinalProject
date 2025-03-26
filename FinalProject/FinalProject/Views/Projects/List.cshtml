@@ -7,6 +7,16 @@
 @model List<FinalProject.Models.Entities.Project>
 
 <h1>Projects:</h1>
+@{
+    var successMessage = TempData["SuccessMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div class="alert alert-success">
+        @successMessage
+    </div>
+}
 <table class="table">
     <thead>
         <tr>

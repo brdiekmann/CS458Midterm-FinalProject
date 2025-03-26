@@ -29,11 +29,12 @@ namespace FinalProject.Models.Entities
         [Range(0.01, (double)decimal.MaxValue, ErrorMessage = "Funding must be a positive number")]
         public decimal Funding { get; set; }
 
-        [Required(ErrorMessage ="SubmitterId is required")]
-        [Range(0,int.MaxValue, ErrorMessage = "SumbmitterId must be positive")]
+        
         [ForeignKey("submitter")]
+        [Required(ErrorMessage = "SubmitterId is required")]
+        [Range(0, int.MaxValue, ErrorMessage = "SumbmitterId must be positive")]
         public int SubmitterId { get; set; }
-        public User submitter { get; set; }
+        public User? submitter { get; set; }
         
 
     }
