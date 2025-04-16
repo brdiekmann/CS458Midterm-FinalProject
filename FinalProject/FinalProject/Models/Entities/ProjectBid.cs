@@ -14,7 +14,7 @@ namespace FinalProject.Models.Entities
         public Project project { get; set; }
 
         [ForeignKey("bidder")]
-        public int BidderId { get; set; }
+        public string BidderId { get; set; }
         public User bidder { get; set; }
 
         public string Status { get; set; }

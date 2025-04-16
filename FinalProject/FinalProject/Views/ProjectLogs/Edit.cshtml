@@ -44,7 +44,9 @@ else
                 <option value="">Select Operator</option>
                 @foreach (var user in ViewBag.Users as List<User>)
                 {
-                    <option value="@user.Id" selected="@(user.Id == Model.OperatorId)">@user.Name</option>
+                    <option value="@user.Id" selected="@(user.Id.ToString() == Model.OperatorId)">
+                        @user.Name
+                    </option>
                 }
             </select>
             <span asp-validation-for="OperatorId" class="text-danger"></span>

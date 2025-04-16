@@ -4,7 +4,6 @@ using FinalProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Azure;
 using Microsoft.EntityFrameworkCore;
-using AspNetCoreGeneratedDocument;
 
 namespace FinalProject.Controllers
 {

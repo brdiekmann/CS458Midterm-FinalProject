@@ -9,7 +9,7 @@ namespace FinalProject.Models
     {
         public int ProjectId { get; set; }
         public Project project { get; set; }
-        public int BidderId { get; set; }
+        public string BidderId { get; set; }
         public User bidder { get; set; }
         public string Status { get; set; }
         public string Note { get; set; }

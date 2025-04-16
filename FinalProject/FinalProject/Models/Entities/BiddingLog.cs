@@ -10,7 +10,7 @@ namespace FinalProject.Models.Entities
         public int Id { get; set; }
         public string Status { get; set; }
         [ForeignKey("operatorId")]
-        public int OperatorId { get; set; }
+        public string OperatorId { get; set; }
         public User operatorId { get; set; }
 
         public string Operation { get; set; }

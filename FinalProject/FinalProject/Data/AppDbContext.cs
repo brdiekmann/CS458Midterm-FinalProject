@@ -1,13 +1,13 @@
 ﻿using FinalProject.Models.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 namespace FinalProject.Data
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        //DbSets for the Models
-        public DbSet<User> Users { get; set; }
+        //Db Sets for the Models
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectBid> ProjectBids { get; set; }
         public DbSet<BiddingLog> BiddingLogs { get; set; }
@@ -16,8 +16,6 @@ namespace FinalProject.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Fill Tables
-            base.OnModelCreating(modelBuilder);
             /* Fill this in later basic model bellow of filling data
             modelBuilder.Entity<User>().HasData(
                 new User
@@ -30,6 +28,27 @@ namespace FinalProject.Data
                     Phone = "(912) 745-8390"
                 },
             */
+
+            modelBuilder.Entity<ProjectBid>()
+                .HasOne(pb => pb.project)
+                .WithMany()
+                .HasForeignKey(pb => pb.ProjectId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ProjectBid>()
+                .HasOne(pb => pb.bidder) 
+                .WithMany()
+                .HasForeignKey(pb => pb.BidderId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ProjectLog>()
+            .HasOne(pl => pl.project)
+            .WithMany()
+            .HasForeignKey(pl => pl.ProjectId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            base.OnModelCreating(modelBuilder);
+
         }
     }
 }

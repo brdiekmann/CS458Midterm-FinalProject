@@ -21,7 +21,7 @@ namespace User.Test
             _mockRepo = new Mock<IUserService>();
             _testUser = new FinalProject.Models.Entities.User
             {
-                Id = 1,
+                Id = _testUser.Id,
                 Name = "Test User",
                 ProfilePicture = "Test.jpeg",
                 Bio = "This is a User test",
@@ -44,7 +44,7 @@ namespace User.Test
             _mockRepo.Setup(repo => repo.GetUserByIdAsync(1)).ReturnsAsync(_testUser);
             var result = await _mockRepo.Object.GetUserByIdAsync(1);
             Assert.NotNull(result);
-            Assert.Equal(1, result.Id);
+            Assert.Equal(_testUser.Id, result.Id);
         }
 
         [Fact]

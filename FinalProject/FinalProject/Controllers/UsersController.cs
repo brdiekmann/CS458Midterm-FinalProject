@@ -5,15 +5,18 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.NetworkInformation;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace FinalProject.Controllers
 {
     public class UsersController : Controller
     {
         private readonly AppDbContext dbContext;
-        public UsersController(AppDbContext dbContext)
+        private readonly UserManager<User> _userManager;
+        public UsersController(AppDbContext dbContext, UserManager<User> userManager)
         {
             this.dbContext = dbContext;
+            this._userManager = userManager;
         }
 
        public IActionResult Index()
@@ -38,16 +41,25 @@ namespace FinalProject.Controllers
                 ProfilePicture = userViewModel.ProfilePicture,
                 Bio = userViewModel.Bio,
                 Email = userViewModel.Email,
-                Phone = userViewModel.Phone
+                PhoneNumber = userViewModel.Phone,
+                UserName = userViewModel.Email
 
             };
 
-            await dbContext.Users.AddAsync(user);
-            await dbContext.SaveChangesAsync();
+            var result = await _userManager.CreateAsync(user, "DefaultPassword123!");
 
-            TempData["SuccessMessage"] = "User " + user.Name + " (ID: " + user.Id + ") added successfully!";
+            if (result.Succeeded)
+            {
+                TempData["SuccessMessage"] = $"User {user.Name} (ID: {user.Id}) added successfully!";
+                return RedirectToAction("List");
+            }
 
-            return RedirectToAction("List");
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return View(userViewModel);
         }
         [HttpGet]
         public async Task<IActionResult> List()
@@ -58,10 +70,9 @@ namespace FinalProject.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(string id)
         {
             var user = await dbContext.Users.FindAsync(id);
-
             return View(user);
         }
         [HttpPost]

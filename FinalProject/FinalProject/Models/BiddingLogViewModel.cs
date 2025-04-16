@@ -3,7 +3,7 @@
     public class BiddingLogViewModel
     {
         public string Status { get; set; }
-        public int OperatorId { get; set; }
+        public string OperatorId { get; set; }
         public string Operation {  get; set; }
         public string Note { get; set; }
         public DateTime Timestamp { get; set; }

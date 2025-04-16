@@ -43,7 +43,7 @@ namespace FinalProject.Controllers
             }
 
             var submitterName = dbContext.Users
-			.Where(u => u.Id == projectViewModel.Project.SubmitterId)
+			.Where(u => u.Id.ToString() == projectViewModel.Project.SubmitterId)
 			.Select(u => u.Name)
 			// Retrieve only the name
 			.FirstOrDefault();

@@ -16,7 +16,7 @@ namespace FinalProject.Models.Entities
 
         [Required(ErrorMessage = "Operator is required.")]
         [ForeignKey("operatorId")]
-        public int OperatorId { get; set; }
+        public string OperatorId { get; set; }
 
         public User? operatorId { get; set; }
 
