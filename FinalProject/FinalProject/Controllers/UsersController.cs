@@ -105,7 +105,7 @@ namespace FinalProject.Controllers
 
             if (user is not null)
             {
-                dbContext.Users.Remove(userViewModel);
+                dbContext.Users.Remove(user);
                 await dbContext.SaveChangesAsync();
             }
 
