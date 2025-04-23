@@ -101,12 +101,11 @@ namespace FinalProject.Controllers
         public async Task<IActionResult> Delete(User userViewModel)
         {
             var user = await dbContext.Users
-                .AsNoTracking()
                 .FirstOrDefaultAsync(x =>x.Id == userViewModel.Id);
 
             if (user is not null)
             {
-                dbContext.Users.Remove(userViewModel);
+                dbContext.Users.Remove(user);
                 await dbContext.SaveChangesAsync();
             }
 

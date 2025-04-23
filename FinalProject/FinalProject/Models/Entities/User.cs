@@ -5,7 +5,6 @@ namespace FinalProject.Models.Entities
 {
     public class User : IdentityUser
     {
-
         [Required(ErrorMessage = "Name is required."), StringLength(20)]
         public string? Name { get; set; }
 

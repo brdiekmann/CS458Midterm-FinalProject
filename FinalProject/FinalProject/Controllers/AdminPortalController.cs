@@ -1,22 +1,20 @@
-using System.Diagnostics;
+﻿using FinalProject.Data;
 using FinalProject.Models;
 using FinalProject.Models.Entities;
-using FinalProject.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
+
 namespace FinalProject.Controllers
 {
-    [Authorize]
-    public class HomeController : Controller
+    public class AdminPortalController : Controller
     {
         private readonly AppDbContext dbContext;
-        public HomeController(AppDbContext dbContext)
+        public AdminPortalController(AppDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
-
         [HttpGet]
         public IActionResult Index()
         {
@@ -26,7 +24,7 @@ namespace FinalProject.Controllers
             var projectlogs = dbContext.ProjectLogs.ToList();
             var attachments = dbContext.Attachments.ToList();
             var projectbids = dbContext.ProjectBids.ToList();
-            var viewModel = new HomeViewModel
+            var viewModel = new AdminViewModel
             {
                 Users = users,
                 Projects = projects,
@@ -36,17 +34,6 @@ namespace FinalProject.Controllers
                 ProjectBids = projectbids
             };
             return View(viewModel);
-}
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
