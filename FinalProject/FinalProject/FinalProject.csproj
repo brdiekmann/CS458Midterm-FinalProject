@@ -29,8 +29,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
   </ItemGroup>
 
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Views\Account\" />
   </ItemGroup>
 
+=======
+>>>>>>> c67095773c27842ec7e48371fa2ae311e724da7b
 </Project>
