@@ -8,6 +8,9 @@ namespace FinalProject.Controllers
         {
             return View();
         }
+
+        public IActionResult Login() => View();
+        public IActionResult Register() => View();
       
     }
 }
