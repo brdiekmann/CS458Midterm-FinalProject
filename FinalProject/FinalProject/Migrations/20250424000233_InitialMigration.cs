@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinalProject.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:FinalProject/FinalProject/Migrations/20250423224429_Intitial Migration.cs
-    public partial class IntitialMigration : Migration
-========
-    public partial class InitialCreate : Migration
->>>>>>>> c67095773c27842ec7e48371fa2ae311e724da7b:FinalProject/FinalProject/Migrations/20250423223908_InitialCreate.cs
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

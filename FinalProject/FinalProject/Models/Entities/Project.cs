@@ -32,7 +32,6 @@ namespace FinalProject.Models.Entities
 
         [ForeignKey("submitter")]
         [Required(ErrorMessage = "SubmitterId is required")]
-        [Range(0, int.MaxValue, ErrorMessage = "SumbmitterId must be positive")]
         public string? SubmitterId { get; set; }
         public User? submitter { get; set; }
         

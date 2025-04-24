@@ -21,6 +21,10 @@ namespace FinalProject.Models.Entities
         public string Note { get; set; }
         public string Proposal { get; set; }
         public string Timeline { get; set; }
+
+        [Required (ErrorMessage = "Bid amount required")]
+        [Range(0.01, (double)decimal.MaxValue, ErrorMessage = "Bid must be a positive number")]
+        public decimal Bid { get; set; }
         public DateTime SubmittedTime { get; set; }
 
     }

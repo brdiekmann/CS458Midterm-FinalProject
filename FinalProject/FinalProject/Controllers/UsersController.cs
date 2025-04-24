@@ -6,9 +6,11 @@ using System.Net.NetworkInformation;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         private readonly AppDbContext dbContext;

@@ -4,9 +4,11 @@ using FinalProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Azure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class ProjectLogsController : Controller
     {
         private readonly AppDbContext dbContext;

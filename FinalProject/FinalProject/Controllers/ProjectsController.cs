@@ -5,9 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.NetworkInformation;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+
+using System.Reflection;
+using System.ComponentModel.Design;
 
 namespace FinalProject.Controllers
 {
+	//[Authorize]
 	public class ProjectsController : Controller
 	{
 		private readonly AppDbContext dbContext;
@@ -58,6 +63,7 @@ namespace FinalProject.Controllers
 				Status = projectViewModel.Project.Status,
 				Funding = projectViewModel.Project.Funding,
 				SubmitterId = projectViewModel.Project.SubmitterId,
+				submitter = await dbContext.Users.FirstOrDefaultAsync(u=>u.Id==projectViewModel.Project.SubmitterId)
             };
 
             TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
@@ -126,6 +132,23 @@ namespace FinalProject.Controllers
 
 			return RedirectToAction("List", "Projects");
 		}
+
+		[HttpGet]
+		public async Task<IActionResult> ViewProjects()
+		{
+            var projects = await dbContext.Projects
+                .Include(p => p.submitter)
+                .ToListAsync();
+
+            return View(projects);
+        }
+		[HttpGet]
+		public async Task<IActionResult> ProjectView(int projectId)
+		{
+            var project = await dbContext.Projects.FindAsync(projectId);
+
+            return View(project);
+        }
 
 	}
 }

@@ -1,0 +1,31 @@
+﻿@model List<FinalProject.Models.Entities.Project>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Tags</th>
+            <th>Deadline</th>
+            <th>Technology</th>
+            <th>Status</th>
+            <th>Submitter</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+            <tr>
+                <td>@project.Title</td>
+                <td>@project.Description</td>
+                <td>@project.Tags</td>
+                <td>@project.Deadline</td>
+                <td>@project.Technology</td>
+                <td>@project.Status</td>
+                <td>@(project.submitter != null ? project.submitter.Name : "Unknown")</td> <!-- Safely display the submitter's name -->
+                <td>
+                    <a class="btn btn-primary" asp-controller="Projects" asp-action="ProjectView" asp-route-id="@project.Id">View More</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

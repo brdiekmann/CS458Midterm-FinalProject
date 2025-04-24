@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-<<<<<<<< HEAD:FinalProject/FinalProject/Migrations/20250423224429_Intitial Migration.Designer.cs
-    [Migration("20250423224429_Intitial Migration")]
-    partial class IntitialMigration
-========
-    [Migration("20250423223908_InitialCreate")]
-    partial class InitialCreate
->>>>>>>> c67095773c27842ec7e48371fa2ae311e724da7b:FinalProject/FinalProject/Migrations/20250423223908_InitialCreate.Designer.cs
+    [Migration("20250424023758_SubmitterFix")]
+    partial class SubmitterFix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,6 +155,9 @@ namespace FinalProject.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Bid")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("BidderId")
                         .IsRequired()

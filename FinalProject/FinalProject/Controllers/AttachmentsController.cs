@@ -3,9 +3,11 @@ using FinalProject.Models.Entities;
 using FinalProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class AttachmentsController : Controller
     {
         private readonly AppDbContext dbContext;

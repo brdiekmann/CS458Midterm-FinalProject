@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProject.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminPortalController : Controller
     {
         private readonly AppDbContext dbContext;

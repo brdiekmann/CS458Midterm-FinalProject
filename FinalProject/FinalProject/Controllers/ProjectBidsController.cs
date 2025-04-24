@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.NetworkInformation;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class ProjectBidsController : Controller
     {
         private readonly AppDbContext dbContext;
@@ -36,6 +38,7 @@ namespace FinalProject.Controllers
                 Status = projectBidsViewModel.Status,
                 Note = projectBidsViewModel.Note,
                 Proposal = projectBidsViewModel.Proposal,
+                Bid = projectBidsViewModel.Bid,
                 Timeline = projectBidsViewModel.Timeline,
                 SubmittedTime = projectBidsViewModel.SubmittedTime,
             };
@@ -74,6 +77,7 @@ namespace FinalProject.Controllers
                 projectBid.Status = projectBidViewModel.Status;
                 projectBid.Note = projectBidViewModel.Note;
                 projectBid.Proposal = projectBidViewModel.Proposal;
+                projectBid.Bid = projectBidViewModel.Bid;
                 projectBid.Timeline = projectBidViewModel.Timeline;
                 projectBid.SubmittedTime = projectBidViewModel.SubmittedTime;
                 
@@ -98,6 +102,7 @@ namespace FinalProject.Controllers
 
             return RedirectToAction("List", "ProjectBids");
         }
+
 
     }
 }

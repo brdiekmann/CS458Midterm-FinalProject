@@ -64,7 +64,7 @@
     <label class="form-label">Submitter Id:</label>
     <select asp-for="Project.SubmitterId" class="form-control">
         <option value="">Select Submitter</option>
-        @foreach (var user in Model.Users)
+        @foreach (var user in @Model.Users)
         {
             <option value="@user.Id">@user.Name</option>
         }
