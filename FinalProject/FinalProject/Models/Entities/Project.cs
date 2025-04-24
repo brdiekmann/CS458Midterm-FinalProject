@@ -33,7 +33,7 @@ namespace FinalProject.Models.Entities
         [ForeignKey("submitter")]
         [Required(ErrorMessage = "SubmitterId is required")]
         public string? SubmitterId { get; set; }
-        public User? submitter { get; set; }
+        public User? Submitter { get; set; }
         
 
     }

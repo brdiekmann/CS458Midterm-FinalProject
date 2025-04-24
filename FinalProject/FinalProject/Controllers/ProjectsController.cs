@@ -63,20 +63,20 @@ namespace FinalProject.Controllers
 				Status = projectViewModel.Project.Status,
 				Funding = projectViewModel.Project.Funding,
 				SubmitterId = projectViewModel.Project.SubmitterId,
-				submitter = await dbContext.Users.FirstOrDefaultAsync(u=>u.Id==projectViewModel.Project.SubmitterId)
-            };
-
-            TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
+				Submitter = await dbContext.Users.FirstOrDefaultAsync(u => u.Id == projectViewModel.Project.SubmitterId)
+			};
 
             await dbContext.Projects.AddAsync(project);
 			await dbContext.SaveChangesAsync();
-			return RedirectToAction("List");
+
+            TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
+            return RedirectToAction("List");
 		}
 		[HttpGet]
 		public async Task<IActionResult> List()
 		{
 			var projects = await dbContext.Projects
-				.Include(p => p.submitter)
+				.Include(p => p.Submitter)
 				.ToListAsync();
 
 			return View(projects);
@@ -85,11 +85,17 @@ namespace FinalProject.Controllers
 		[HttpGet]
 		public async Task<IActionResult> Edit(int id)
 		{
-			var project = await dbContext.Projects.FindAsync(id);
+            var project = await dbContext.Projects
+            .Include(p => p.Submitter)
+			.FirstOrDefaultAsync(p => p.Id == id);
 
             ViewBag.Users = dbContext.Users.ToList();
 
+            if (project == null)
+                return NotFound();
+
             return View(project);
+
 		}
 		[HttpPost]
 		public async Task<IActionResult> Edit(Project projectViewModel)
@@ -126,7 +132,7 @@ namespace FinalProject.Controllers
 
 			if (project is not null)
 			{
-				dbContext.Projects.Remove(projectViewModel);
+				dbContext.Projects.Remove(project);
 				await dbContext.SaveChangesAsync();
 			}
 
@@ -137,15 +143,21 @@ namespace FinalProject.Controllers
 		public async Task<IActionResult> ViewProjects()
 		{
             var projects = await dbContext.Projects
-                .Include(p => p.submitter)
+                .Include(p => p.Submitter)
                 .ToListAsync();
 
             return View(projects);
         }
+
 		[HttpGet]
-		public async Task<IActionResult> ProjectView(int projectId)
+		public async Task<IActionResult> ProjectView(int id)
 		{
-            var project = await dbContext.Projects.FindAsync(projectId);
+            var project = await dbContext.Projects
+				.Include(p => p.Submitter)
+				.FirstOrDefaultAsync(p => p.Id == id);
+
+            if (project == null)
+                return NotFound();
 
             return View(project);
         }

@@ -94,9 +94,9 @@
                 <label class="form-label">Submitter ID:</label>
                 <select asp-for="SubmitterId" class="form-control">
                     <option value="">Select Submitter</option>
-                    @foreach (var user in ViewBag.Users as List<User>)
+                    @foreach (var user in ViewBag.Users)
                     {
-                        <option value="Web Development" selected="@(Model.Technology == "Web Development" ? "selected" : "")">Web Development</option>
+                        <option value="@user.Id">@user.Name</option>
                     }
                 </select>
                 <span asp-validation-for="SubmitterId" class="text-danger"></span>

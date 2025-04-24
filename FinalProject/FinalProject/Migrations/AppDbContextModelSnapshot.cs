@@ -55,7 +55,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Attachments");
+                    b.ToTable("Attachments", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.BiddingLog", b =>
@@ -94,7 +94,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectBidId");
 
-                    b.ToTable("BiddingLogs");
+                    b.ToTable("BiddingLogs", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.Project", b =>
@@ -142,7 +142,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("SubmitterId");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.ProjectBid", b =>
@@ -188,7 +188,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectBids");
+                    b.ToTable("ProjectBids", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.ProjectLog", b =>
@@ -228,7 +228,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectLogs");
+                    b.ToTable("ProjectLogs", (string)null);
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.User", b =>

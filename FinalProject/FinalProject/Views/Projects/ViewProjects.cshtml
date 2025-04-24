@@ -21,7 +21,7 @@
                 <td>@project.Deadline</td>
                 <td>@project.Technology</td>
                 <td>@project.Status</td>
-                <td>@(project.submitter != null ? project.submitter.Name : "Unknown")</td> <!-- Safely display the submitter's name -->
+                <td>@(project.Submitter != null ? project.Submitter.Name : "Unknown")</td> <!-- Safely display the submitter's name -->
                 <td>
                     <a class="btn btn-primary" asp-controller="Projects" asp-action="ProjectView" asp-route-id="@project.Id">View More</a>
                 </td>
