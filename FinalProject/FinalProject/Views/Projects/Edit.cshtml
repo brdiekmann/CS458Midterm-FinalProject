@@ -1,19 +1,17 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Edit Project";
 }
-
-@using FinalProject.Models.Entities
 @model FinalProject.Models.Entities.Project
-<h1>Edit Project</h1>
-@if (Model is null)
-{
-    <p>No project was found with this Id</p>
-}
-else
-{
-    <form method="post">
+@using FinalProject.Models.Entities
+
+<!-- Edit Project Section -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Edit Project</h4>
+    </div>
+    <div class="card-body">
+
+        <!-- Validation Errors (if any) -->
         @if (!ViewData.ModelState.IsValid)
         {
             <div class="alert alert-danger">
@@ -25,68 +23,90 @@ else
                 </ul>
             </div>
         }
-        <div class="mt-3">
-            <label class="form-label">Id:</label>
-            <input type="text" class="form-control" asp-for="Id" readonly />
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Title:</label>
-            <input type="text" class="form-control" asp-for="Title" />
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Description:</label>
-            <input type="text" class="form-control" asp-for="Description" />
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Tags:</label>
-            <input type="text" class="form-control" asp-for="Tags" />
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Deadline:</label>
-            <input type="datetime-local" class="form-control" asp-for="Deadline" value="@DateTime.Today.AddDays(7).ToString("yyyy-MM-ddTHH:mm")" />
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Technology:</label>
-            <select asp-for="Technology" class="form-control">
-                <option value="">Select Technology</option>
-                <option value="Web Development" selected="@(Model.Technology == "Web Development")">Web Development</option>
-                <option value="Mobile Development" selected="@(Model.Technology == "Mobile Development")">Mobile Development</option>
-                <option value="Data Science" selected="@(Model.Technology == "Data Science")">Data Science</option>
-                <option value="AI/ML" selected="@(Model.Technology == "AI/ML")">AI/ML</option>
-                <option value="Cloud Computing" selected="@(Model.Technology == "Cloud Computing")">Cloud Computing</option>
-            </select>
-            <span asp-validation-for="Technology" class="text-danger"></span>
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Status:</label>
-            <select asp-for="Status" class="form-control">
-                <option value="">Select Status</option>
-                <option value="Pending" selected="@(Model.Status == "Pending")">Pending</option>
-                <option value="Approved" selected="@(Model.Status == "Approved")">Approved</option>
-                <option value="Rejected" selected="@(Model.Status == "Rejected")">Rejected</option>
-            </select>
-            <span asp-validation-for="Status" class="text-danger"></span>
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Funding:</label>
-            <input type="text" class="form-control" asp-for="Funding" />
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Submitter ID:</label>
-            <select asp-for="SubmitterId" class="form-control">
-                <option value="">Select Submitter</option>
-                @foreach (var user in ViewBag.Users as List<User>)
-                {
-                    <option value="@user.Id">@user.Name</option>
-                }
-            </select>
-            <span asp-validation-for="SubmitterId" class="text-danger"></span>
-        </div>
 
-        <div>
-            <button type="submit" class="btn btn-primary">Save</button>
+        <!-- Edit Project Form -->
+        <form method="post">
 
-            <button type="submit" class="btn btn-danger ms-3" asp-action="Delete" asp-controller="Projects">Delete</button>
-        </div>
-    </form>
-}
+            <!-- Id Field (Readonly) -->
+            <div class="mt-3">
+                <label class="form-label">Id:</label>
+                <input type="text" class="form-control" asp-for="Id" readonly />
+            </div>
+
+            <!-- Title Field -->
+            <div class="mt-3">
+                <label class="form-label">Title:</label>
+                <input type="text" class="form-control" asp-for="Title" />
+            </div>
+
+            <!-- Description Field -->
+            <div class="mt-3">
+                <label class="form-label">Description:</label>
+                <input type="text" class="form-control" asp-for="Description" />
+            </div>
+
+            <!-- Tags Field -->
+            <div class="mt-3">
+                <label class="form-label">Tags:</label>
+                <input type="text" class="form-control" asp-for="Tags" />
+            </div>
+
+            <!-- Deadline Field -->
+            <div class="mt-3">
+                <label class="form-label">Deadline:</label>
+                <input type="datetime-local" class="form-control" asp-for="Deadline" value="@DateTime.Today.AddDays(7).ToString("yyyy-MM-ddTHH:mm")" />
+            </div>
+
+            <!-- Technology Field -->
+            <div class="mt-3">
+                <label class="form-label">Technology:</label>
+                <select asp-for="Technology" class="form-control">
+                    <option value="">Select Technology</option>
+                    <option value="Web Development" selected="@(Model.Technology == "Web Development")">Web Development</option>
+                    <option value="Mobile Development" selected="@(Model.Technology == "Mobile Development")">Mobile Development</option>
+                    <option value="Data Science" selected="@(Model.Technology == "Data Science")">Data Science</option>
+                    <option value="AI/ML" selected="@(Model.Technology == "AI/ML")">AI/ML</option>
+                    <option value="Cloud Computing" selected="@(Model.Technology == "Cloud Computing")">Cloud Computing</option>
+                </select>
+                <span asp-validation-for="Technology" class="text-danger"></span>
+            </div>
+
+            <!-- Status Field -->
+            <div class="mt-3">
+                <label class="form-label">Status:</label>
+                <select asp-for="Status" class="form-control">
+                    <option value="">Select Status</option>
+                    <option value="Pending" selected="@(Model.Status == "Pending")">Pending</option>
+                    <option value="Approved" selected="@(Model.Status == "Approved")">Approved</option>
+                    <option value="Rejected" selected="@(Model.Status == "Rejected")">Rejected</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <!-- Funding Field -->
+            <div class="mt-3">
+                <label class="form-label">Funding:</label>
+                <input type="text" class="form-control" asp-for="Funding" />
+            </div>
+
+            <!-- Submitter ID Field -->
+            <div class="mt-3">
+                <label class="form-label">Submitter ID:</label>
+                <select asp-for="SubmitterId" class="form-control">
+                    <option value="">Select Submitter</option>
+                    @foreach (var user in ViewBag.Users as List<User>)
+                    {
+                        <option value="Web Development" selected="@(Model.Technology == "Web Development" ? "selected" : "")">Web Development</option>
+                    }
+                </select>
+                <span asp-validation-for="SubmitterId" class="text-danger"></span>
+            </div>
+
+            <!-- Save and Delete Buttons -->
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-danger ms-3" asp-action="Delete" asp-controller="Projects">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
