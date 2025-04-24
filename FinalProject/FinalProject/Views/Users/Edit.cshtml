@@ -1,73 +1,91 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Edit User";
 }
 @model FinalProject.Models.Entities.User
-<h1>Edit User</h1>
-@if (Model is null)
-{
-    <p>No user was found with this Id</p>
-}
-else
-{
-    <form method="post">
-        @if (!ViewData.ModelState.IsValid)
+
+<!-- Edit User Section -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Edit User</h4>
+    </div>
+    <div class="card-body">
+        @if (Model == null)
         {
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                    {
-                        <li>@error.ErrorMessage</li>
-                    }
-                </ul>
-            </div>
+            <p>No user was found with this Id</p>
         }
-    <div class="mt-3">
-        <label class="form-label">Id:</label>
-        <input type="text" class="form-control" asp-for="Id" readonly />
-    </div>
-    <div class="mt-3">
-        <label class="form-label">Name:</label>
-        <input type="text" class="form-control" asp-for="Name" />
-    </div>
+        else
+        {
+            <!-- Form for Editing User -->
+            <form method="post">
 
-    <div class="mt-3">
-        <label for="avatar">Profile Picture:</label>
-
-        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onchange="convertToBase64()" />
-        <input type="hidden" id="ProfilePicture" name="ProfilePicture" />
-
-        <script>
-            function convertToBase64() {
-                var file = document.getElementById("avatar").files[0];
-                var reader = new FileReader();
-                reader.onloadend = function () {
-                    document.getElementById("ProfilePicture").value = reader.result;
-                };
-                if (file) {
-                    reader.readAsDataURL(file);
+                <!-- Validation Errors (if any) -->
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                            {
+                                <li>@error.ErrorMessage</li>
+                            }
+                        </ul>
+                    </div>
                 }
-            }
-        </script>
-    </div>
 
-    <div class="mt-3">
-        <label class="form-label">Bio:</label>
-        <input type="text" class="form-control" asp-for="Bio" />
-    </div>
-    <div class="mt-3">
-        <label class="form-label">Email:</label>
-        <input type="email" class="form-control" asp-for="Email" />
-    </div>
-    <div class="mt-3">
-        <label class="form-label">Phone:</label>
-        <input type="text" class="form-control" asp-for="Phone" />
-    </div>
-    <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Save</button>
+                <!-- Id Field (Readonly) -->
+                <div class="mt-3">
+                    <label class="form-label">Id:</label>
+                    <input type="text" class="form-control" asp-for="Id" readonly />
+                </div>
 
-            <button type="submit" class="btn btn-danger ms-3" asp-action="Delete" asp-controller="Users">Delete</button>
+                <!-- Name Field -->
+                <div class="mt-3">
+                    <label class="form-label">Name:</label>
+                    <input type="text" class="form-control" asp-for="Name" />
+                </div>
+
+                <!-- Profile Picture (File Input) -->
+                <div class="mt-3">
+                    <label for="avatar" class="form-label">Profile Picture:</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" onchange="convertToBase64()" class="form-control" />
+                    <input type="hidden" id="ProfilePicture" name="ProfilePicture" />
+                    <script>
+                        function convertToBase64() {
+                            var file = document.getElementById("avatar").files[0];
+                            var reader = new FileReader();
+                            reader.onloadend = function () {
+                                document.getElementById("ProfilePicture").value = reader.result;
+                            };
+                            if (file) {
+                                reader.readAsDataURL(file);
+                            }
+                        }
+                    </script>
+                </div>
+
+                <!-- Bio Field -->
+                <div class="mt-3">
+                    <label class="form-label">Bio:</label>
+                    <input type="text" class="form-control" asp-for="Bio" />
+                </div>
+
+                <!-- Email Field -->
+                <div class="mt-3">
+                    <label class="form-label">Email:</label>
+                    <input type="email" class="form-control" asp-for="Email" />
+                </div>
+
+                <!-- Phone Field -->
+                <div class="mt-3">
+                    <label class="form-label">Phone:</label>
+                    <input type="text" class="form-control" asp-for="Phone" />
+                </div>
+
+                <!-- Action Buttons (Save and Delete) -->
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-danger ms-3" asp-action="Delete" asp-controller="Users">Delete</button>
+                </div>
+            </form>
+        }
     </div>
-</form>
-}
+</div>
