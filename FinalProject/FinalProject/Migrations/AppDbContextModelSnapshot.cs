@@ -55,7 +55,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Attachments", (string)null);
+                    b.ToTable("Attachments");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.BiddingLog", b =>
@@ -94,7 +94,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectBidId");
 
-                    b.ToTable("BiddingLogs", (string)null);
+                    b.ToTable("BiddingLogs");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.Project", b =>
@@ -142,7 +142,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("SubmitterId");
 
-                    b.ToTable("Projects", (string)null);
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.ProjectBid", b =>
@@ -153,34 +153,18 @@ namespace FinalProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Bid")
+                    b.Property<decimal>("BidValue")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("BidderId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Note")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Proposal")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("SubmittedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Timeline")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -188,7 +172,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectBids", (string)null);
+                    b.ToTable("ProjectBids");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.ProjectLog", b =>
@@ -228,7 +212,7 @@ namespace FinalProject.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("ProjectLogs", (string)null);
+                    b.ToTable("ProjectLogs");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.User", b =>
@@ -480,13 +464,13 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("FinalProject.Models.Entities.Project", b =>
                 {
-                    b.HasOne("FinalProject.Models.Entities.User", "submitter")
+                    b.HasOne("FinalProject.Models.Entities.User", "Submitter")
                         .WithMany()
                         .HasForeignKey("SubmitterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("submitter");
+                    b.Navigation("Submitter");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.ProjectBid", b =>

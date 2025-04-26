@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FinalProject.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class TestMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -217,10 +217,7 @@ namespace FinalProject.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProjectId = table.Column<int>(type: "int", nullable: false),
                     BidderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Note = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Proposal = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Timeline = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BidValue = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     SubmittedTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

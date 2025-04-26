@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250424012657_UpdateMigration")]
-    partial class UpdateMigration
+    [Migration("20250426025139_TestMigration")]
+    partial class TestMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -156,34 +156,18 @@ namespace FinalProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<decimal>("Bid")
+                    b.Property<decimal>("BidValue")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("BidderId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Note")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Proposal")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("SubmittedTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Timeline")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -483,13 +467,13 @@ namespace FinalProject.Migrations
 
             modelBuilder.Entity("FinalProject.Models.Entities.Project", b =>
                 {
-                    b.HasOne("FinalProject.Models.Entities.User", "submitter")
+                    b.HasOne("FinalProject.Models.Entities.User", "Submitter")
                         .WithMany()
                         .HasForeignKey("SubmitterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("submitter");
+                    b.Navigation("Submitter");
                 });
 
             modelBuilder.Entity("FinalProject.Models.Entities.ProjectBid", b =>
