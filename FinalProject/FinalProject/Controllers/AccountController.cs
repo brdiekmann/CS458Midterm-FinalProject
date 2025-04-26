@@ -74,8 +74,7 @@ namespace FinalProject.Controllers
                 Email = model.Email,
                 Name = model.FullName,
                 Phone = "Not set",
-                Bio = "Hi there, I'm new!",
-                EmailConfirmed = false
+                Bio = "Hi there, I'm new!"
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);

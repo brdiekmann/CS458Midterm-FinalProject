@@ -39,7 +39,8 @@ namespace FinalProject.Data
                     Name = "Administrative User",
                     Bio = "The default admin account made by the system.",
                     Email = "admin@example.com",
-                    Phone = "4445556767"
+                    Phone = "4445556767",
+                    EmailConfirmed = true
                 };
 
                 var result = await _userManager.CreateAsync(adminUser, "Admin@123");
@@ -59,7 +60,8 @@ namespace FinalProject.Data
                     Name = "Regular User",
                     Bio = "The default user account made by the system.",
                     Email = "user@example.com",
-                    Phone = "1112223333"
+                    Phone = "1112223333",
+                    EmailConfirmed = true
                 };
 
                 var result = await _userManager.CreateAsync(guestAccount, "User@123");
