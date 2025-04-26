@@ -1,34 +1,50 @@
-﻿
-@model FinalProject.Models.ProjectBidsViewModel
-@if (Model is null)
-{
-    <p>No project bid was found with this Id</p>
-}
-else
-{
-    <form method="post">
-        <div class="mt-3">
-            <h1>@Model.project.Title</h1>
-            <hr />
-        </div>
-        <div>
-            <h3>Project Description:</h3>
-            <h5>@Model.project.Description</h5>
-        </div>
-        <div>
-            <input type="hidden" asp-for="BidderId" />
-            <input type="hidden" asp-for="ProjectId" />
-        </div>
-        <div class="mt-3">
-            <label class="form-label">Bid:</label>
-            <div class="input-group">
-            <span class="input-group-text">$</span>
-            <input type="text" class="form-control" asp-for="BidValue" />
-            </div>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary">Place Bid</button>
-        </div>
-    </form>
-}
+﻿@model FinalProject.Models.ProjectBidsViewModel
 
+<!-- Bid Page Card -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Place Your Bid</h4>
+    </div>
+    <div class="card-body">
+        @if (Model is null)
+        {
+            <p>No project bid was found with this Id</p>
+        }
+        else
+        {
+            <form method="post">
+                <!-- Project Title -->
+                <div class="mt-3">
+                    <h1>@Model.project.Title</h1>
+                    <hr />
+                </div>
+
+                <!-- Project Description -->
+                <div>
+                    <h3>Project Description:</h3>
+                    <h5>@Model.project.Description</h5>
+                </div>
+
+                <!-- Hidden Inputs for BidderId and ProjectId -->
+                <div>
+                    <input type="hidden" asp-for="BidderId" />
+                    <input type="hidden" asp-for="ProjectId" />
+                </div>
+
+                <!-- Bid Input -->
+                <div class="mt-3">
+                    <label class="form-label">Bid:</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" asp-for="BidValue" />
+                    </div>
+                </div>
+
+                <!-- Place Bid Button -->
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">Place Bid</button>
+                </div>
+            </form>
+        }
+    </div>
+</div>

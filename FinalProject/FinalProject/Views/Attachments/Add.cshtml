@@ -1,34 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Add Attachment";
 }
-
 @model FinalProject.Models.AttachmentViewModel
-<form method="post">
-    <h1>Add Attachment</h1>
 
-    <div class="mt-3">
-        <label class="form-label">Type:</label>
-        <input type="text" class="form-control" asp-for="Type" />
+<!-- Add Attachment Page Card -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>@ViewData["Title"]</h4>
     </div>
-    <div class="mt-3">
-        <label class="form-label">Name:</label>
-        <input type="text" class="form-control" asp-for="Name" />
+    <div class="card-body">
+        <form method="post">
+            <!-- Type Input -->
+            <div class="mt-3">
+                <label class="form-label">Type:</label>
+                <input type="text" class="form-control" asp-for="Type" />
+            </div>
+
+            <!-- Name Input -->
+            <div class="mt-3">
+                <label class="form-label">Name:</label>
+                <input type="text" class="form-control" asp-for="Name" />
+            </div>
+
+            <!-- Location Input -->
+            <div class="mt-3">
+                <label class="form-label">Location:</label>
+                <input type="text" class="form-control" asp-for="Location" />
+            </div>
+
+            <!-- Last Modified Timestamp Input -->
+            <div class="mt-3">
+                <label class="form-label">LastModifiedTimestamp:</label>
+                <input type="datetime-local" class="form-control" asp-for="LastModifiedTimestamp" />
+            </div>
+
+            <!-- ProjectId Input -->
+            <div class="mt-3">
+                <label class="form-label">ProjectId:</label>
+                <input type="text" class="form-control" asp-for="ProjectId" />
+            </div>
+
+            <!-- Save Button -->
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
     </div>
-    <div class="mt-3">
-        <label class="form-label">Location:</label>
-        <input type="text" class="form-control" asp-for="Location" />
-    </div>
-    <div class="mt-3">
-        <label class="form-label">LastModifiedTimestamp:</label>
-        <input type="datetime-local" class="form-control" asp-for="LastModifiedTimestamp" />
-    </div>
-    <div class="mt-3">
-        <label class="form-label">ProjectId:</label>
-        <input type="text" class="form-control" asp-for="ProjectId" />
-    </div>
-    <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Save</button>
-    </div>
-</form>
+</div>

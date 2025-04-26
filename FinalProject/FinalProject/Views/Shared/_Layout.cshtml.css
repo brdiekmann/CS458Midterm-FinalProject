@@ -22,6 +22,17 @@ a {
     border-color: #1861ac;
 }
 
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-left: -35px;
+    text-align: center;
+}
+
+.nav-item.dropdown:hover .dropdown-toggle {
+    color: #007bff; 
+}
+
+
 .border-top {
     border-top: 1px solid #e5e5e5;
 }
