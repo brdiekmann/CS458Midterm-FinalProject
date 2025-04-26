@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> UserManager
+@inject SignInManager<User> SignInManager
+@using FinalProject.Models.Entities
+
+@{
+    var user = User.Identity.IsAuthenticated ? await UserManager.GetUserAsync(User) : null;
+    var isAdmin = user != null && await UserManager.IsInRoleAsync(user, "Admin");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -51,14 +61,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        @if (User.Identity.AuthenticationType != null)
+                        @if (isAdmin)
                         {
-                            @if (User.Identity.AuthenticationType == "Admin")
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="AdminPortal" asp-action="Index">Admin Portal</a>
-                                </li>
-                            }
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminPortal" asp-action="Index">Admin Portal</a>
+                            </li>
                         }
                     </ul>
                 </div>
