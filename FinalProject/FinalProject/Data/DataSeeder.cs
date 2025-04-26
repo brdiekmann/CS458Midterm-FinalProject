@@ -36,7 +36,7 @@ namespace FinalProject.Data
                 adminUser = new User
                 {
                     UserName = "admin",
-                    Name = "admin",
+                    Name = "Administrative User",
                     Bio = "The default admin account made by the system.",
                     Email = "admin@example.com",
                     PhoneNumber = "4445556767",
@@ -57,7 +57,7 @@ namespace FinalProject.Data
                 guestAccount = new User
                 {
                     UserName = "user",
-                    Name = "user",
+                    Name = "Regular User",
                     Bio = "The default user account made by the system.",
                     Email = "user@example.com",
                     PhoneNumber = "1112223333",

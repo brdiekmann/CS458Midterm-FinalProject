@@ -44,8 +44,7 @@ namespace FinalProject.Controllers
                 Bio = userViewModel.Bio,
                 Email = userViewModel.Email,
                 PhoneNumber = userViewModel.Phone,
-                UserName = userViewModel.Email
-
+                UserName = userViewModel.UserName
             };
 
             var result = await _userManager.CreateAsync(user, "DefaultPassword123!");
@@ -94,7 +93,7 @@ namespace FinalProject.Controllers
                 await dbContext.SaveChangesAsync();
             }
 
-            TempData["SuccessMessage"] = "User " + user.Name + " (ID: " + user.Id + ") edited successfully!";
+            TempData["SuccessMessage"] = "User " + user.UserName + " (ID: " + user.Id + ") edited successfully!";
 
             return RedirectToAction("List");
         }
