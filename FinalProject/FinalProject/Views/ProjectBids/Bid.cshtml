@@ -8,11 +8,16 @@ else
 {
     <form method="post">
         <div class="mt-3">
-            <label class="form-label">@Model.project.Title</label>
+            <h1>@Model.project.Title</h1>
+            <hr />
         </div>
         <div>
-            <label class="form-label">Project Description:</label>
-            <p>@Model.project.Description</p>
+            <h3>Project Description:</h3>
+            <h5>@Model.project.Description</h5>
+        </div>
+        <div>
+            <input type="hidden" asp-for="BidderId" />
+            <input type="hidden" asp-for="ProjectId" />
         </div>
         <div class="mt-3">
             <label class="form-label">Bid:</label>

@@ -139,6 +139,11 @@ namespace FinalProject.Controllers
 			return RedirectToAction("List", "Projects");
 		}
 
+		public IActionResult ProjectMenu()
+		{
+			return View();
+		}
+
 		[HttpGet]
 		public async Task<IActionResult> ViewProjects()
 		{

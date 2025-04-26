@@ -105,14 +105,13 @@ namespace FinalProject.Controllers
             if (_project == null) return NotFound();
 
             var user = await userManager.GetUserAsync(User);
-            string userId = user?.Id ?? "Unknown";
-            string userName = user?.UserName ?? "Unknown";
+            if (user == null) return NotFound();
 
             var viewModel = new ProjectBidsViewModel
             {
                 ProjectId = _project.Id,
                 project = _project,
-                BidderId = userId,
+                BidderId = user.Id,
                 bidder = user
             };
 
@@ -120,16 +119,18 @@ namespace FinalProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Bid(ProjectBidsViewModel projectBidsViewModel)
+        public async Task<IActionResult> Bid(ProjectBidsViewModel projectBidsViewModel)
         {
             var projectBid = new ProjectBid
             {
-                BidderId = projectBidsViewModel.BidderId,
                 ProjectId = projectBidsViewModel.ProjectId,
+                BidderId = projectBidsViewModel.BidderId,
                 BidValue = projectBidsViewModel.BidValue,
                 SubmittedTime = DateTime.Now,
             };
-            return RedirectToAction("ProjectView", "Projects");
+            await dbContext.ProjectBids.AddAsync(projectBid);
+            await dbContext.SaveChangesAsync();
+            return RedirectToAction("ViewProjects", "Projects");
         }
 
     }
