@@ -14,10 +14,7 @@
             <th>Project</th>
             <th>Bidder</th>
             <th>Bidder ID</th>
-            <th>Status</th>
-            <th>Note</th>
-            <th>Proposal</th>
-            <th>Timeline</th>
+            <th>Bid</th>
             <th>Submitted Time</th>
         </tr>
     </thead>
@@ -29,10 +26,7 @@
                 <td>@(projectBid.project != null ? projectBid.project.Title : "Unknown")</td> <!-- Safely display the project's title -->
 				<td>@(projectBid.bidder != null ? projectBid.bidder.Name : "Unknown")</td> <!-- Safely display the bidder's name -->
                 <td>@projectBid.BidderId</td>
-                <td>@projectBid.Status</td>
-                <td>@projectBid.Note</td>
-                <td>@projectBid.Proposal</td>
-                <td>@projectBid.Timeline</td>
+                <td>@projectBid.BidValue</td>
                 <td>@projectBid.SubmittedTime</td>
                 
                 <td>

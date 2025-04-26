@@ -1,35 +1,47 @@
-﻿@model FinalProject.Models.Entities.Project
+﻿@using FinalProject.Models.Entities
+@model FinalProject.Models.Entities.Project
 <div class="mt-3">
-    <h1>Title:</h1>
+    <h3>Title:</h3>
     <p>@Model.Title</p>
+    <hr />
 </div>
 <div class="mt-3">
-    <h1>Description:</h1>
+    <h3>Description:</h3>
     <p>@Model.Description</p>
+    <hr />
 </div>
 <div class="mt-3">
-    <h1>Title:</h1>
+    <h3>Tags:</h3>
     <p>@Model.Tags</p>
+    <hr />
 </div>
 <div class="mt-3">
-    <h1>Description:</h1>
+    <h3>Deadline:</h3>
     <p>@Model.Deadline</p>
+    <hr />
 </div>
 <div class="mt-3">
-    <h1>Title:</h1>
+    <h3>Technology:</h3>
     <p>@Model.Technology</p>
+    <hr />
 </div>
 <div class="mt-3">
-    <h1>Description:</h1>
+    <h3>Status:</h3>
     <p>@Model.Status</p>
+    <hr />
 </div>
 <div class="mt-3">
-    <h1>Title:</h1>
+    <h3>Funding:</h3>
     <p>@Model.Funding</p>
+    <hr />
 </div>
 <div class="mt-3">
-    <h1>Description:</h1>
+    <h3>Submitter:</h3>
     <p>@Model.Submitter.Name</p>
+    <hr />
+</div>
+<div>
+    <a class="btn btn-primary" asp-controller="ProjectBids" asp-action="Bid" asp-route-id="@Model.Id">Bid</a>
 </div>
 
 

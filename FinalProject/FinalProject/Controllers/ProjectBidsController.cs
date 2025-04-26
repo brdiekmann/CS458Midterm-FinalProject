@@ -6,6 +6,7 @@ using System.Net.NetworkInformation;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace FinalProject.Controllers
 {
@@ -13,9 +14,12 @@ namespace FinalProject.Controllers
     public class ProjectBidsController : Controller
     {
         private readonly AppDbContext dbContext;
-        public ProjectBidsController(AppDbContext dbContext)
+        private readonly UserManager<User> userManager;
+        public ProjectBidsController(AppDbContext dbContext, UserManager<User> userManager)
         {
             this.dbContext = dbContext;
+            this.userManager = userManager;
+
         }
 
         public IActionResult Index()
@@ -35,11 +39,7 @@ namespace FinalProject.Controllers
             {
                 BidderId = projectBidsViewModel.BidderId,
                 ProjectId = projectBidsViewModel.ProjectId,
-                Status = projectBidsViewModel.Status,
-                Note = projectBidsViewModel.Note,
-                Proposal = projectBidsViewModel.Proposal,
-                Bid = projectBidsViewModel.Bid,
-                Timeline = projectBidsViewModel.Timeline,
+                BidValue = projectBidsViewModel.BidValue,
                 SubmittedTime = projectBidsViewModel.SubmittedTime,
             };
 
@@ -74,11 +74,7 @@ namespace FinalProject.Controllers
             {
                 projectBid.ProjectId = projectBidViewModel.ProjectId;
                 projectBid.BidderId = projectBidViewModel.BidderId;
-                projectBid.Status = projectBidViewModel.Status;
-                projectBid.Note = projectBidViewModel.Note;
-                projectBid.Proposal = projectBidViewModel.Proposal;
-                projectBid.Bid = projectBidViewModel.Bid;
-                projectBid.Timeline = projectBidViewModel.Timeline;
+                projectBid.BidValue = projectBidViewModel.BidValue;
                 projectBid.SubmittedTime = projectBidViewModel.SubmittedTime;
                 
                 await dbContext.SaveChangesAsync();
@@ -102,7 +98,39 @@ namespace FinalProject.Controllers
 
             return RedirectToAction("List", "ProjectBids");
         }
+        [HttpGet]
+        public async Task<IActionResult> Bid(int Id)
+        {
+            var _project = await dbContext.Projects.FindAsync(Id);
+            if (_project == null) return NotFound();
 
+            var user = await userManager.GetUserAsync(User);
+            string userId = user?.Id ?? "Unknown";
+            string userName = user?.UserName ?? "Unknown";
+
+            var viewModel = new ProjectBidsViewModel
+            {
+                ProjectId = _project.Id,
+                project = _project,
+                BidderId = userId,
+                bidder = user
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Bid(ProjectBidsViewModel projectBidsViewModel)
+        {
+            var projectBid = new ProjectBid
+            {
+                BidderId = projectBidsViewModel.BidderId,
+                ProjectId = projectBidsViewModel.ProjectId,
+                BidValue = projectBidsViewModel.BidValue,
+                SubmittedTime = DateTime.Now,
+            };
+            return RedirectToAction("ProjectView", "Projects");
+        }
 
     }
 }

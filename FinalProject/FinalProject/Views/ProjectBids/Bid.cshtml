@@ -1,0 +1,29 @@
+﻿
+@model FinalProject.Models.ProjectBidsViewModel
+@if (Model is null)
+{
+    <p>No project bid was found with this Id</p>
+}
+else
+{
+    <form method="post">
+        <div class="mt-3">
+            <label class="form-label">@Model.project.Title</label>
+        </div>
+        <div>
+            <label class="form-label">Project Description:</label>
+            <p>@Model.project.Description</p>
+        </div>
+        <div class="mt-3">
+            <label class="form-label">Bid:</label>
+            <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" asp-for="BidValue" />
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Place Bid</button>
+        </div>
+    </form>
+}
+

@@ -11,11 +11,7 @@ namespace FinalProject.Models
         public Project project { get; set; }
         public string BidderId { get; set; }
         public User bidder { get; set; }
-        public string Status { get; set; }
-        public string Note { get; set; }
-        public string Proposal { get; set; }
-        public string Timeline { get; set; }
-        public decimal Bid {  get; set; }
+        public decimal BidValue {  get; set; }
         public DateTime SubmittedTime { get; set; }
 
     }

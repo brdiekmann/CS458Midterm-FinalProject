@@ -16,15 +16,11 @@ namespace FinalProject.Models.Entities
         [ForeignKey("bidder")]
         public string BidderId { get; set; }
         public User bidder { get; set; }
-
-        public string Status { get; set; }
-        public string Note { get; set; }
-        public string Proposal { get; set; }
-        public string Timeline { get; set; }
+        
 
         [Required (ErrorMessage = "Bid amount required")]
         [Range(0.01, (double)decimal.MaxValue, ErrorMessage = "Bid must be a positive number")]
-        public decimal Bid { get; set; }
+        public decimal BidValue { get; set; }
         public DateTime SubmittedTime { get; set; }
 
     }
