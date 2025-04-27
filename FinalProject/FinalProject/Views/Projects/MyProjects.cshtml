@@ -14,7 +14,7 @@
 <!-- Projects Table Section -->
 <!-- Add Project Button -->
 <div class="mt-3">
-    <a class="btn btn-success" asp-controller="Projects" asp-action="Add">Create New Project</a>
+    <a class="btn btn-success" asp-controller="Projects" asp-action="AddNew">Create</a>
     <hr />
 </div>
 <div class="card mb-4">
@@ -47,7 +47,7 @@
                         <td>@project.Deadline</td>
                         <td>@project.Technology</td>
                         <td>@project.Status</td>
-                        <td>@project.Funding</td>
+                        <td>$@project.Funding</td>
                         <td>
                             <!-- Edit Button -->
                             <a class="btn btn-primary" asp-controller="Projects" asp-action="EditMyProject" asp-route-id="@project.Id">Edit</a>

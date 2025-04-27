@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Reflection;
 using System.ComponentModel.Design;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 
 namespace FinalProject.Controllers
 {
@@ -231,6 +232,51 @@ namespace FinalProject.Controllers
             TempData["SuccessMessage"] = project.Title +" edited successfully!";
 
             return RedirectToAction("MyProjects", "Projects");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddNew()
+        {
+            var user = await userManager.GetUserAsync(User);
+            if (user == null) return NotFound();
+            var project = new Project
+            {
+                SubmitterId = user.Id,
+                Submitter = user
+            };
+            var model = new ProjectViewModel
+            {
+                Project = project
+            };
+
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddNew(ProjectViewModel projectViewModel)
+        {
+            if (!ModelState.IsValid)
+            { 
+                return View(projectViewModel);
+            }
+
+            var project = new Project
+            {
+                Title = projectViewModel.Project.Title,
+                Description = projectViewModel.Project.Description,
+                Tags = projectViewModel.Project.Tags,
+                Deadline = projectViewModel.Project.Deadline,
+                Technology = projectViewModel.Project.Technology,
+                Status = projectViewModel.Project.Status,
+                Funding = projectViewModel.Project.Funding,
+                SubmitterId = projectViewModel.Project.SubmitterId,
+                Submitter = projectViewModel.Project.Submitter
+            };
+
+            await dbContext.Projects.AddAsync(project);
+            await dbContext.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = project.Title + " added successfully!";
+            return RedirectToAction("MyProjects");
         }
 
 
