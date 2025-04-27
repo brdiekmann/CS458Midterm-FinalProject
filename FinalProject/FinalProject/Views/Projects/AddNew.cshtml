@@ -1,0 +1,93 @@
+﻿@using FinalProject.Models.Entities
+@model FinalProject.Models.ProjectViewModel
+
+<!-- Add Project Page Card -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Add Project</h4>
+    </div>
+    <div class="card-body">
+        <!-- Validation Errors -->
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+
+        <form method="post">
+            <!-- Title Field -->
+            <div class="mt-3">
+                <label class="form-label">Title:</label>
+                <input type="text" class="form-control" asp-for="Project.Title" />
+            </div>
+
+            <!-- Description Field -->
+            <div class="mt-3">
+                <label class="form-label">Description:</label>
+                <input type="text" class="form-control" asp-for="Project.Description" />
+            </div>
+
+            <!-- Tags Field -->
+            <div class="mt-3">
+                <label class="form-label">Tags:</label>
+                <input type="text" class="form-control" asp-for="Project.Tags" />
+            </div>
+
+            <!-- Deadline Field -->
+            <div class="mt-3">
+                <label class="form-label">Deadline:</label>
+                <input type="datetime-local" class="form-control" asp-for="Project.Deadline" value="@DateTime.Today.AddDays(7).ToString("yyyy-MM-ddTHH:mm")" />
+            </div>
+
+            <!-- Technology Dropdown -->
+            <div class="mt-3">
+                <label class="form-label">Technology:</label>
+                <select asp-for="Project.Technology" class="form-control">
+                    <option value="">Select Technology</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile Development">Mobile Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="AI/ML">AI/ML</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                </select>
+                <span asp-validation-for="Project.Technology" class="text-danger"></span>
+            </div>
+
+            <!-- Status Dropdown -->
+            <div class="mt-3">
+                <label class="form-label">Status:</label>
+                <select asp-for="Project.Status" class="form-control">
+                    <option value="">Select Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Approved">Approved</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+                <span asp-validation-for="Project.Status" class="text-danger"></span>
+            </div>
+
+            <!-- Funding Field -->
+            <div class="mt-3">
+                <label class="form-label">Funding:</label>
+                <input type="text" class="form-control" asp-for="Project.Funding" />
+            </div>
+
+            <!-- Submitter Hidden Value -->
+            <div class="mt-3">
+                <input type="hidden" asp-for="Project.SubmitterId"/>
+               
+            </div>
+
+            <!-- Save Button -->
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+

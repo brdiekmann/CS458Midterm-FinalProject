@@ -1,7 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Projects";
-}
-@model List<FinalProject.Models.Entities.Project>
+﻿@model List<FinalProject.Models.Entities.Project>
 
 <!-- Success Message Alert (if any) -->
 @{
@@ -15,6 +12,11 @@
 }
 
 <!-- Projects Table Section -->
+<!-- Add Project Button -->
+<div class="mt-3">
+    <a class="btn btn-success" asp-controller="Projects" asp-action="AddNew">Create</a>
+    <hr />
+</div>
 <div class="card mb-4">
     <div class="card-header">
         <h4>Projects List</h4>
@@ -25,7 +27,6 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Title</th>
                     <th>Description</th>
                     <th>Tags</th>
@@ -33,8 +34,6 @@
                     <th>Technology</th>
                     <th>Status</th>
                     <th>Funding</th>
-                    <th>Submitter ID</th>
-                    <th>Submitter</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -42,7 +41,6 @@
                 @foreach (var project in Model)
                 {
                     <tr>
-                        <td>@project.Id</td>
                         <td>@project.Title</td>
                         <td>@project.Description</td>
                         <td>@project.Tags</td>
@@ -50,20 +48,13 @@
                         <td>@project.Technology</td>
                         <td>@project.Status</td>
                         <td>$@project.Funding</td>
-                        <td>@project.SubmitterId</td>
-                        <td>@(project.Submitter != null ? project.Submitter.Name : "Unknown")</td> <!-- Safely display the submitter's name -->
                         <td>
                             <!-- Edit Button -->
-                            <a class="btn btn-primary" asp-controller="Projects" asp-action="Edit" asp-route-id="@project.Id">Edit</a>
+                            <a class="btn btn-primary" asp-controller="Projects" asp-action="EditMyProject" asp-route-id="@project.Id">Edit</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
-
-        <!-- Add Project Button -->
-        <div class="mt-3">
-            <a class="btn btn-success" asp-controller="Projects" asp-action="Add">Add New Project</a>
-        </div>
     </div>
 </div>
