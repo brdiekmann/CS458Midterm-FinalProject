@@ -69,6 +69,18 @@ namespace FinalProject.Controllers
             await dbContext.Projects.AddAsync(project);
 			await dbContext.SaveChangesAsync();
 
+			// Not sure if this is the best approach...
+			var projectLog = new ProjectLog {
+				Status = project.Status,
+				OperatorId = project.SubmitterId ?? "",
+				Operation = "Create",
+				Note = project.Description,
+				Timestamp = DateTime.Now,
+				ProjectId = project.Id,
+			};
+            await dbContext.ProjectLogs.AddAsync(projectLog);
+			await dbContext.SaveChangesAsync();
+
             TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
             return RedirectToAction("List");
 		}
@@ -115,8 +127,20 @@ namespace FinalProject.Controllers
 				project.SubmitterId = projectViewModel.SubmitterId;
 				
 
-				await dbContext.SaveChangesAsync();
-			}
+				//await dbContext.SaveChangesAsync();
+
+                // Not sure if this is the best approach...
+                var projectLog = new ProjectLog {
+                    Status = project.Status,
+                    OperatorId = project.SubmitterId ?? "",
+                    Operation = "Edit",
+                    Note = project.Description,
+                    Timestamp = DateTime.Now,
+                    ProjectId = project.Id,
+                };
+                await dbContext.ProjectLogs.AddAsync(projectLog);
+                await dbContext.SaveChangesAsync();
+            }
 
             TempData["SuccessMessage"] = "Project " + project.Title + " (ID: " + project.Id + ") added successfully!";
 
@@ -124,17 +148,30 @@ namespace FinalProject.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Delete(Project projectViewModel)
-		{
+		public async Task<IActionResult> Delete(Project projectViewModel, ProjectLog projectLogViewModel) {
 			var project = await dbContext.Projects
 				.AsNoTracking()
 				.FirstOrDefaultAsync(x => x.Id == projectViewModel.Id);
+            if (project == null) return NotFound();
 
-			if (project is not null)
-			{
+            var projectbids = await dbContext.ProjectBids
+				.AsNoTracking()
+				.Where(u => u.ProjectId == projectViewModel.Id)
+				.ToListAsync();
+            if (projectbids == null) return NotFound();
+
+            var projectLogs = await dbContext.ProjectLogs
+				.AsNoTracking()
+				.Where(w => w.ProjectId == projectViewModel.Id)
+				.ToListAsync();
+			if (projectLogs == null) return NotFound();
+
+            if (project is not null) {
 				dbContext.Projects.Remove(project);
-				await dbContext.SaveChangesAsync();
-			}
+				dbContext.ProjectBids.RemoveRange(projectbids);
+				dbContext.ProjectLogs.RemoveRange(projectLogs);
+                await dbContext.SaveChangesAsync();
+            }
 
 			return RedirectToAction("List", "Projects");
 		}
@@ -167,8 +204,7 @@ namespace FinalProject.Controllers
             return View(project);
         }
 
-		
-
+		//public void 
 	}
 }
 
