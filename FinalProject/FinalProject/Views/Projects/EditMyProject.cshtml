@@ -1,4 +1,7 @@
-﻿@model FinalProject.Models.Entities.Project
+﻿@{
+    ViewData["Title"] = "Edit Project";
+}
+@model FinalProject.Models.Entities.Project
 @using FinalProject.Models.Entities
 <div class="card mb-4">
     <div class="card-header">
@@ -21,6 +24,10 @@
 
         <!-- Edit Project Form -->
         <form method="post">
+            <!--Id Field-->
+            <div class="mt-3">
+                <input type="hidden" class="form-control" asp-for="Id" />
+            </div>
 
             <!-- Title Field -->
             <div class="mt-3">

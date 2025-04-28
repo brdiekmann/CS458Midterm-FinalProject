@@ -133,14 +133,31 @@ namespace FinalProject.Controllers
 			var project = await dbContext.Projects
 				.AsNoTracking()
 				.FirstOrDefaultAsync(x => x.Id == projectViewModel.Id);
+            var projectbids = await dbContext.ProjectBids
+                .AsNoTracking()
+                .Where(u => u.ProjectId == projectViewModel.Id)
+                .ToListAsync();
+            if (projectbids == null) return NotFound();
 
-			if (project is not null)
+            var user = await userManager.GetUserAsync(User);
+
+            if (user == null) return NotFound();
+
+            if (project is not null)
 			{
 				dbContext.Projects.Remove(project);
+                dbContext.ProjectBids.RemoveRange(projectbids);
 				await dbContext.SaveChangesAsync();
 			}
 
-			return RedirectToAction("List", "Projects");
+            if (userManager.GetRolesAsync(user).ToString() != "Admin")
+            {
+                return RedirectToAction("MyProjects", "Projects");
+            }
+            else
+            {
+                return RedirectToAction("List", "Projects");
+            }
 		}
 
 		public IActionResult ProjectMenu()
@@ -198,20 +215,19 @@ namespace FinalProject.Controllers
             if (user == null) return NotFound();
             var project = await dbContext.Projects
             .Include(p => p.Submitter)
-            .Where(p => p.Submitter.Id == user.Id)
+            .Where(u => u.Submitter.Id == user.Id)
             .FirstOrDefaultAsync(p => p.Id == id);
 
-            if (project == null)
-                return NotFound();
+            if (project == null) return NotFound();
 
             return View(project);
         }
 		[HttpPost]
         public async Task<IActionResult> EditMyProject(Project projectViewModel)
 		{
+            if (!ModelState.IsValid) return View(projectViewModel);
             var user = await userManager.GetUserAsync(User);
             if (user == null) return NotFound();
-            if (!ModelState.IsValid) return View(projectViewModel);
             var project = await dbContext.Projects.FindAsync(projectViewModel.Id);
 
             if (project is not null)
@@ -224,6 +240,7 @@ namespace FinalProject.Controllers
                 project.Status = projectViewModel.Status;
                 project.Funding = projectViewModel.Funding;
                 project.SubmitterId = user.Id;
+                project.Submitter = user;
 
 
                 await dbContext.SaveChangesAsync();
