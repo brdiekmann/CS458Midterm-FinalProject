@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Azure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace FinalProject.Controllers
 {
@@ -51,7 +52,6 @@ namespace FinalProject.Controllers
                 Note = projectLogModel.ProjectLog.Note,
                 Timestamp = projectLogModel.ProjectLog.Timestamp,
                 ProjectId = projectLogModel.ProjectLog.ProjectId
-
             };
 
             await dbContext.ProjectLogs.AddAsync(projectLog);
