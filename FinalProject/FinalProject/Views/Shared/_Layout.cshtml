@@ -43,26 +43,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="ProjectMenu">Projects</a>
                         </li>
-
-                        <!-- Logs Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownLogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Logs
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownLogs">
-                                <li>
-                                    <a class="dropdown-item" asp-area="" asp-controller="BiddingLogs" asp-action="List">Bidding Logs</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" asp-area="" asp-controller="ProjectLogs" asp-action="List">Project Logs</a>
-                                </li>
-                            </ul>
-                        </li>
                         @if (isAdmin)
                         {
+                            <!-- Admin Logs Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownLogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin Logs
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownLogs">
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="BiddingLogs" asp-action="List">Bidding Logs</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="" asp-controller="ProjectLogs" asp-action="List">Project Logs</a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="AdminPortal" asp-action="Index">Admin Portal</a>
                             </li>
+
                         }
                     </ul>
                 </div>

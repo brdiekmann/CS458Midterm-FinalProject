@@ -276,6 +276,18 @@ namespace FinalProject.Controllers
 
                 await dbContext.SaveChangesAsync();
             }
+            // Not sure if this is the best approach...
+            var projectLog = new ProjectLog
+            {
+                Status = project.Status,
+                OperatorId = project.SubmitterId ?? "",
+                Operation = "Edit",
+                Note = project.Description,
+                Timestamp = DateTime.Now,
+                ProjectId = project.Id,
+            };
+            await dbContext.ProjectLogs.AddAsync(projectLog);
+            await dbContext.SaveChangesAsync();
 
             TempData["SuccessMessage"] = project.Title +" edited successfully!";
 
@@ -321,6 +333,18 @@ namespace FinalProject.Controllers
             };
 
             await dbContext.Projects.AddAsync(project);
+            await dbContext.SaveChangesAsync();
+
+            var projectLog = new ProjectLog
+            {
+                Status = project.Status,
+                OperatorId = project.SubmitterId ?? "",
+                Operation = "Create",
+                Note = project.Description,
+                Timestamp = DateTime.Now,
+                ProjectId = project.Id,
+            };
+            await dbContext.ProjectLogs.AddAsync(projectLog);
             await dbContext.SaveChangesAsync();
 
             TempData["SuccessMessage"] = project.Title + " added successfully!";
