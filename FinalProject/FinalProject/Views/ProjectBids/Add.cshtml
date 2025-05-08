@@ -3,6 +3,11 @@
 }
 @model FinalProject.Models.ProjectBidsViewModel
 
+
+<partial name="_ValidationScriptsPartial" />
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
 <!-- Add Project Bid Page Card -->
 <div class="card mb-4">
     <div class="card-header">
@@ -10,6 +15,17 @@
     </div>
     <div class="card-body">
         <form method="post">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@error.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
             <!-- Project ID Input -->
             <!-- Project ID Dropdown -->
             <div class="mt-3">
@@ -17,6 +33,7 @@
                 <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.Projects">
                     <option value="">-- Select Project --</option>
                 </select>
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
             </div>
 
             <!-- Bidder ID Dropdown -->
@@ -25,18 +42,21 @@
                 <select asp-for="BidderId" class="form-control" asp-items="ViewBag.Bidders">
                     <option value="">-- Select Bidder --</option>
                 </select>
+                <span asp-validation-for="BidderId" class="text-danger"></span>
             </div>
 
             <!-- Submitted Time Input -->
             <div class="mt-3">
                 <label class="form-label">Submitted Time:</label>
                 <input type="datetime-local" class="form-control" asp-for="SubmittedTime" />
+                <span asp-validation-for="SubmittedTime" class="text-danger"></span>
             </div>
 
             <!-- Bid Value Input -->
             <div class="mt-3">
                 <label class="form-label">Bid:</label>
                 <input type="text" class="form-control" asp-for="BidValue" />
+                <span asp-validation-for="BidValue" class="text-danger"></span>
             </div>
 
             <!-- Save Button -->

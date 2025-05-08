@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Project Bids";
+}
+@model List<FinalProject.Models.Entities.ProjectBid>
+
+<!-- Project Bids Page Card -->
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>@ViewData["Title"]</h4>
+    </div>
+    <div class="card-body">
+        <!-- Project Bids Table -->
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Project</th>
+                    <th>Bidder</th>
+                    <th>Bidder ID</th>
+                    <th>Bid</th>
+                    <th>Submitted Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var projectBid in Model)
+                {
+                    <tr>
+                        <td>@projectBid.Id</td>
+                        <td>@(projectBid.project.Title)</td>
+                        <td>@(projectBid.bidder.Name)</td>
+                        <td>@projectBid.BidderId</td>
+                        <td>@projectBid.BidValue</td>
+                        <td>@projectBid.SubmittedTime</td>
+                        <td>
+                            <a class="btn btn-primary" asp-controller="ProjectBids" asp-action="BidView" asp-route-id="@projectBid.Id">View More</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
