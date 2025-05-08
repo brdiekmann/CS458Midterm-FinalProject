@@ -7,6 +7,8 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Reflection;
 
 namespace FinalProject.Controllers
 {
@@ -30,11 +32,30 @@ namespace FinalProject.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            var bidders = dbContext.Users
+                .Select(u => new { u.Id, Name = u.Name })
+                .ToList();
+
+            var projects = dbContext.Projects
+                .Select(p => new {p.Id, p.Title})
+                .ToList();
+
+            ViewBag.Projects = new SelectList(projects, "Id", "Title");
+            ViewBag.Bidders = new SelectList(bidders, "Id", "Name");
+
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Add(ProjectBidsViewModel projectBidsViewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Projects = new SelectList(dbContext.Projects.ToList(), "Id", "Title");
+                ViewBag.Bidders = new SelectList(dbContext.Users.ToList(), "Id", "FullName");
+                return View(projectBidsViewModel);
+            }
+
+
             var projectBid = new ProjectBid
             {
                 BidderId = projectBidsViewModel.BidderId,

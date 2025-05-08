@@ -11,15 +11,20 @@
     <div class="card-body">
         <form method="post">
             <!-- Project ID Input -->
+            <!-- Project ID Dropdown -->
             <div class="mt-3">
-                <label class="form-label">Project ID:</label>
-                <input type="text" class="form-control" asp-for="ProjectId" />
+                <label class="form-label">Project:</label>
+                <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.Projects">
+                    <option value="">-- Select Project --</option>
+                </select>
             </div>
 
-            <!-- Bidder ID Input -->
+            <!-- Bidder ID Dropdown -->
             <div class="mt-3">
-                <label class="form-label">Bidder ID:</label>
-                <input type="text" class="form-control" asp-for="BidderId" />
+                <label class="form-label">Bidder:</label>
+                <select asp-for="BidderId" class="form-control" asp-items="ViewBag.Bidders">
+                    <option value="">-- Select Bidder --</option>
+                </select>
             </div>
 
             <!-- Submitted Time Input -->

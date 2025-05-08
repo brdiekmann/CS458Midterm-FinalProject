@@ -1,4 +1,15 @@
 ﻿@model List<FinalProject.Models.Entities.Project>
+
+<div class="mt-3">
+    <a class="btn btn-success" asp-controller="Projects" asp-action="AddNew">Create</a>
+    <hr />
+</div>
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Project Catalog</h4>
+    </div>
+    <div class="card-body">
+
 <table class="table">
     <thead>
         <tr>
@@ -29,3 +40,5 @@
         }
     </tbody>
 </table>
+</div>
+</div>
