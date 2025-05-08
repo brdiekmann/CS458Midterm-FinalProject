@@ -242,7 +242,7 @@
                     @foreach (var projectbid in Model.ProjectBids.Take(3))
                     {
                         <tr>
-                            <td>@projectbid.project</td>
+                            <td>@projectbid.project.Title</td>
                             <td>@projectbid.bidder</td>
                             <td>@projectbid.BidValue</td>
                             <td>@projectbid.SubmittedTime</td>
