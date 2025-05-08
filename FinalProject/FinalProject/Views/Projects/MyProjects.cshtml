@@ -51,6 +51,7 @@
                         <td>
                             <!-- Edit Button -->
                             <a class="btn btn-primary" asp-controller="Projects" asp-action="EditMyProject" asp-route-id="@project.Id">Edit</a>
+                            <a class="btn btn-primary" asp-controller="Attachments" asp-action="ViewProjectAttachments" asp-route-id="@project.Id">Attachments</a>
                         </td>
                     </tr>
                 }

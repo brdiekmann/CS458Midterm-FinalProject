@@ -4,6 +4,8 @@ using FinalProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.CodeAnalysis;
+using Microsoft.AspNetCore.Identity;
 
 namespace FinalProject.Controllers
 {
@@ -93,5 +95,52 @@ namespace FinalProject.Controllers
 
             return RedirectToAction("List", "Attachments");
         }
+        [HttpGet]
+        public async Task<IActionResult> ViewProjectAttachments(int id)
+        {
+            var attachments = await dbContext.Attachments
+            .Where(p => p.ProjectId == id)
+            .ToListAsync();
+            if (attachments == null) return NotFound();
+
+            return View(attachments);
+        }
+        [HttpGet] 
+        public async Task<IActionResult> AddAttachment(int id)
+        {
+           
+            var attachment = new AttachmentViewModel
+            {
+                ProjectId = id,
+                LastModifiedTimestamp = DateTime.UtcNow,
+            };
+
+            return View(attachment);
+        }
+        [HttpPost] 
+        public async Task<IActionResult> AddAttachment(AttachmentViewModel attachmentViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(attachmentViewModel);
+            }
+            var attachment = new Attachment
+            {
+                Type = attachmentViewModel.Type,
+                Name = attachmentViewModel.Name,
+                Location = attachmentViewModel.Location,
+                LastModifiedTimestamp = attachmentViewModel.LastModifiedTimestamp,
+                //THIS IS CAUSING AN ERROR NEEDS WORK
+                ProjectId = attachmentViewModel.ProjectId
+            };
+
+            await dbContext.Attachments.AddAsync(attachment);
+            await dbContext.SaveChangesAsync();
+            return RedirectToAction("ViewProjectAttachments");
+        }
+        /*
+        [HttpGet]
+        public async Task<IActionResult> EditAttachment()
+        */
     }
 }
