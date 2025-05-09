@@ -34,7 +34,9 @@
                 <label class="form-label">Type:</label>
                 <select asp-for="Attachment.Type" class="form-control">
                     <option value="Select Attachment Type">Select Attachment Type</option>
-                    <option value="Test">Test</option>
+                    <option value="Text">Text</option>
+                    <option value="Image">Image</option>
+                    <option value ="Excel File">Excel File</option>
                 </select>
                 <span asp-validation-for="Attachment.Type" class="text-danger"></span>
             </div>
