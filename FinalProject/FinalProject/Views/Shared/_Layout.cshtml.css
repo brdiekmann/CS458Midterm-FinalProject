@@ -45,20 +45,10 @@ a {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-/* Footer */
-.footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 60px;
-    text-align: center;
-    padding-top: 20px;
-}
 
 /* Navbar Styles */
 .navbar {
-    background-color: #fff;
+    background-color: #333;
 }
 
 .navbar-nav {
@@ -66,15 +56,28 @@ a {
     justify-content: flex-end;
 }
 
+    /* Navbar Link Styling */
     .navbar-nav .nav-link {
-        color: #333;
-        padding: 8px 16px;
+        color: #f4f4f9; /* Light color for the links */
+        padding: 8px 16px; /* Space around the text */
+        transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color and background */
     }
 
+        /* Hover Effect for Navbar Links */
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link:focus {
-            color: #0077cc;
+            color: #ff7e00; /* Orange color on hover */
+            background-color: rgba(0, 0, 0, 0.2); /* Dark background with transparency on hover */
         }
+
+/* Keep the current navbar toggle behavior */
+.navbar-toggler {
+    border-color: #ff7e00; /* Orange border for toggle */
+}
+
+.navbar-toggler-icon {
+    background-color: #ff7e00; /* Orange color for the toggle icon */
+}
 
 .navbar-collapse {
     justify-content: center;
@@ -83,10 +86,6 @@ a {
     .navbar-collapse.ms-auto {
         margin-left: auto;
     }
-
-.navbar-toggler {
-    border-color: #0077cc;
-}
 
 .form-control {
     border-radius: 0.25rem;
@@ -121,6 +120,14 @@ button.btn-primary {
     text-align: center;
     padding-top: 20px;
 }
+
+    .footer a {
+        color: #ff7e00;
+    }
+
+        .footer a:hover {
+            color: #e56b00; /* Hover effect for footer links */
+        }
 
 @media (max-width: 767px) {
     .navbar-nav {

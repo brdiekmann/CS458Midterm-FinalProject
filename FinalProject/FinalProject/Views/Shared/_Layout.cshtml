@@ -23,7 +23,7 @@
 
     <!-- Header with Navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <!-- Navbar brand -->
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ArchProject Manager</a>
@@ -38,29 +38,29 @@
                 <div class="navbar-collapse collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="ProjectMenu">Projects</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Projects" asp-action="ProjectMenu">Projects</a>
                         </li>
                         @if (isAdmin)
                         {
                             <!-- Admin Logs Dropdown -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownLogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle text-light bg-black" href="#" id="navbarDropdownLogs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Admin Logs
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownLogs">
+                                <ul class="dropdown-menu bg-black" aria-labelledby="navbarDropdownLogs">
                                     <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="BiddingLogs" asp-action="List">Bidding Logs</a>
+                                        <a class="dropdown-item text-light bg-black" asp-area="" asp-controller="BiddingLogs" asp-action="List">Bidding Logs</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" asp-area="" asp-controller="ProjectLogs" asp-action="List">Project Logs</a>
+                                        <a class="dropdown-item text-light bg-black" asp-area="" asp-controller="ProjectLogs" asp-action="List">Project Logs</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminPortal" asp-action="Index">Admin Portal</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="AdminPortal" asp-action="Index">Admin Portal</a>
                             </li>
 
                         }

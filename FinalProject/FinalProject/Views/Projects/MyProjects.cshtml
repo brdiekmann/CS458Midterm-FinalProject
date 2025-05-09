@@ -15,7 +15,7 @@
 <!-- Add Project Button -->
 <div class="card mb-4">
     <div class="card-header">
-        <h4>My Projects</h4>
+        <h4 class="text-light">My Projects</h4>
     </div>
     <div class="card-body">
 
@@ -46,8 +46,8 @@
                         <td>$@project.Funding</td>
                         <td>
                             <!-- Edit Button -->
-                            <a class="btn btn-primary" asp-controller="Projects" asp-action="EditMyProject" asp-route-id="@project.Id">Edit</a>
-                            <a class="btn btn-primary" asp-controller="Attachments" asp-action="ViewProjectAttachments" asp-route-id="@project.Id">Attachments</a>
+                            <a class="btn-modern" asp-controller="Projects" asp-action="EditMyProject" asp-route-id="@project.Id">Edit</a>
+                            <a class="btn-modern" asp-controller="Attachments" asp-action="ViewProjectAttachments" asp-route-id="@project.Id">Attachments</a>
                         </td>
                     </tr>
                 }
@@ -55,3 +55,79 @@
         </table>
     </div>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Common body styling */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards */
+            color: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        /* Table Styling */
+        .table th, .table td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.1); /* Slight dark background for odd rows */
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.15); /* Hover effect for rows */
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        /* Button Styling for Orange and Black Theme */
+        .btn-modern {
+            padding: 10px 20px;
+            background-color: #ff7e00; /* Orange for Add and Edit buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px auto; /* Center button */
+        }
+
+            .btn-modern:hover {
+                background-color: #e56b00; /* Darker Orange */
+                text-decoration: none;
+            }
+
+        /* Input Focus Styling */
+        input.form-control:focus {
+            border-color: #ff7e00;
+            box-shadow: 0 0 0 0.2rem rgba(255, 126, 0, 0.25);
+        }
+
+        .form-label {
+            text-align: left;
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>

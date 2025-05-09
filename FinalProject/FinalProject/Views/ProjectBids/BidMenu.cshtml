@@ -1,9 +1,74 @@
-﻿<div>
-    <h1>Project Bids Menu</h1>
+﻿@{
+    ViewData["Title"] = "Project Bids Menu";
+}
+<div>
+    <h1 class="text-light">Project Bids Menu</h1>
     <hr />
 </div>
-<div>
-    <a class="btn btn-success" asp-controller="Projects" asp-action="ViewProjects">Create a Bid</a>
-    <a class="btn btn-primary" asp-controller="ProjectBids" asp-action="ViewBids">Bid Catalog</a>
-    <a class="btn btn-primary" asp-controller="ProjectBids" asp-action="MyBids">View My Bids</a>
+<div class="section">
+    <a class="btn-modern" asp-controller="Projects" asp-action="ViewProjects">Create a Bid</a>
+    <a class="btn-modern" asp-controller="ProjectBids" asp-action="ViewBids">Bid Catalog</a>
+    <a class="btn-modern" asp-controller="ProjectBids" asp-action="MyBids">My Bids</a>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Common body styling */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for buttons */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Header Styling */
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* Button Styling for Orange and Black Theme */
+        .btn-modern {
+            padding: 10px 20px;
+            background-color: #ff7e00; /* Orange for Create, Catalog, and My Projects buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px; /* Space between buttons */
+        }
+
+            .btn-modern:hover {
+                background-color: #e56b00; /* Darker Orange on hover */
+                text-decoration: none;
+            }
+
+        /* Input Focus Styling */
+        input.form-control:focus {
+            border-color: #ff7e00;
+            box-shadow: 0 0 0 0.2rem rgba(255, 126, 0, 0.25);
+        }
+    </style>
+</head>

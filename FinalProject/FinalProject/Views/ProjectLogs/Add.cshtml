@@ -2,90 +2,189 @@
 @model FinalProject.Models.ProjectLogViewModel
 
 <!-- Add Project Log Page Card -->
-<div class="card mb-4">
-    <div class="card-header">
-        <h4>Add Project Log</h4>
-    </div>
-    <div class="card-body">
-        <!-- Validation Errors -->
-        @if (!ViewData.ModelState.IsValid)
-        {
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                    {
-                        <li>@error.ErrorMessage</li>
-                    }
-                </ul>
-            </div>
-        }
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card mb-4" style="max-width: 800px; width: 100%;">
+        <!-- Constrain card width -->
+        <div class="card-header">
+            <h4 class="text-orange">Add Project Log</h4> <!-- Orange title -->
+        </div>
+        <div class="card-body">
+            <!-- Validation Errors -->
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <li>@error.ErrorMessage</li>
+                        }
+                    </ul>
+                </div>
+            }
 
-        <form method="post">
-            <!-- Status Field -->
-            <div class="mt-3">
-                <label class="form-label">Status:</label>
-                <select asp-for="ProjectLog.Status" class="form-control">
-                    <option value="">Select Status</option>
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
-                    <option value="On Hold">On Hold</option>
-                </select>
-                <span asp-validation-for="ProjectLog.Status" class="text-danger"></span>
-            </div>
+            <form method="post">
+                <!-- Status Field -->
+                <div class="mt-3">
+                    <label class="form-label">Status:</label>
+                    <select asp-for="ProjectLog.Status" class="form-control">
+                        <option value="">Select Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                        <option value="On Hold">On Hold</option>
+                    </select>
+                    <span asp-validation-for="ProjectLog.Status" class="text-danger"></span>
+                </div>
 
-            <!-- Operator Dropdown -->
-            <div class="mt-3">
-                <label class="form-label">User Id:</label>
-                <select asp-for="ProjectLog.OperatorId" class="form-control">
-                    <option value="">Select User</option>
-                    @foreach (var user in Model.Users)
-                    {
-                        <option value="@user.Id">@user.Name</option>
-                    }
-                </select>
-                <span asp-validation-for="ProjectLog.OperatorId" class="text-danger"></span>
-            </div>
+                <!-- Operator Dropdown -->
+                <div class="mt-3">
+                    <label class="form-label">User Id:</label>
+                    <select asp-for="ProjectLog.OperatorId" class="form-control">
+                        <option value="">Select User</option>
+                        @foreach (var user in Model.Users)
+                        {
+                            <option value="@user.Id">@user.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ProjectLog.OperatorId" class="text-danger"></span>
+                </div>
 
-            <!-- Operation Dropdown -->
-            <div class="mt-3">
-                <label class="form-label">Operation:</label>
-                <select asp-for="ProjectLog.Operation" class="form-control">
-                    <option value="">Select Operation</option>
-                    <option value="Regular">Regular</option>
-                    <option value="Unique">Unique</option>
-                </select>
-                <span asp-validation-for="ProjectLog.Operation" class="text-danger"></span>
-            </div>
+                <!-- Operation Dropdown -->
+                <div class="mt-3">
+                    <label class="form-label">Operation:</label>
+                    <select asp-for="ProjectLog.Operation" class="form-control">
+                        <option value="">Select Operation</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Unique">Unique</option>
+                    </select>
+                    <span asp-validation-for="ProjectLog.Operation" class="text-danger"></span>
+                </div>
 
-            <!-- Note Field -->
-            <div class="mt-3">
-                <label class="form-label">Note:</label>
-                <input type="text" class="form-control" asp-for="ProjectLog.Note" />
-            </div>
+                <!-- Note Field -->
+                <div class="mt-3">
+                    <label class="form-label">Note:</label>
+                    <input type="text" class="form-control" asp-for="ProjectLog.Note" />
+                </div>
 
-            <!-- Timestamp Field -->
-            <div class="mt-3">
-                <label class="form-label">Timestamp:</label>
-                <input type="datetime-local" class="form-control" asp-for="ProjectLog.Timestamp" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
-            </div>
+                <!-- Timestamp Field -->
+                <div class="mt-3">
+                    <label class="form-label">Timestamp:</label>
+                    <input type="datetime-local" class="form-control" asp-for="ProjectLog.Timestamp" value="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")" />
+                </div>
 
-            <!-- Project Dropdown -->
-            <div class="mt-3">
-                <label class="form-label">Project ID:</label>
-                <select asp-for="ProjectLog.ProjectId" class="form-control">
-                    <option value="">Select Project</option>
-                    @foreach (var project in Model.Projects)
-                    {
-                        <option value="@project.Id">@project.Title</option>
-                    }
-                </select>
-                <span asp-validation-for="ProjectLog.ProjectId" class="text-danger"></span>
-            </div>
+                <!-- Project Dropdown -->
+                <div class="mt-3">
+                    <label class="form-label">Project ID:</label>
+                    <select asp-for="ProjectLog.ProjectId" class="form-control">
+                        <option value="">Select Project</option>
+                        @foreach (var project in Model.Projects)
+                        {
+                            <option value="@project.Id">@project.Title</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ProjectLog.ProjectId" class="text-danger"></span>
+                </div>
 
-            <!-- Save Button -->
-            <div class="mt-3">
-                <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-        </form>
+                <!-- Save Button -->
+                <div class="mt-3 text-center">
+                    <!-- Centered button -->
+                    <button type="submit" class="btn-modern">Save</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Common body styling */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards */
+            color: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        /* Title Styling */
+        .card-header h4 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff7e00; /* Orange color for title */
+        }
+
+        /* Section Styling for each part (Title, Description, etc.) */
+        .mt-3 h3 {
+            color: #ff7e00; /* Orange color for headings */
+            margin-bottom: 10px;
+        }
+
+        .mt-3 p {
+            font-size: 1rem;
+        }
+
+        /* Button Styling for Orange and Black Theme */
+        .btn-modern {
+            padding: 10px 20px;
+            background-color: #ff7e00; /* Orange for Save button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px auto; /* Center the button */
+        }
+
+            .btn-modern:hover {
+                background-color: #e56b00; /* Darker Orange on hover */
+                text-decoration: none;
+            }
+
+        /* Input Focus Styling */
+        input.form-control:focus {
+            border-color: #ff7e00;
+            box-shadow: 0 0 0 0.2rem rgba(255, 126, 0, 0.25);
+        }
+
+        .form-label {
+            text-align: left;
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Card Spacing and Layout */
+        .card-body {
+            padding: 20px;
+        }
+
+            .card-body hr {
+                border: 1px solid rgba(255, 255, 255, 0.3); /* Light separator */
+            }
+
+        /* Footer Styling */
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            white-space: nowrap;
+            line-height: 60px;
+            text-align: center;
+            padding-top: 20px;
+            color: #f4f4f9; /* Light text color */
+        }
+    </style>
+</head>

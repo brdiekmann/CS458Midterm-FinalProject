@@ -4,7 +4,7 @@
 <!-- Project Details Page Card -->
 <div class="card mb-4">
     <div class="card-header">
-        <h4>Project Details</h4>
+        <h4 class="text-light">Project Details</h4>
     </div>
     <div class="card-body">
         <!-- Title -->
@@ -64,8 +64,103 @@
         </div>
 
         <!-- Bid Button -->
-        <div>
-            <a class="btn btn-primary" asp-controller="ProjectBids" asp-action="Bid" asp-route-id="@Model.Id">Bid</a>
+        <div class="mt-3">
+            <a class="btn-modern" asp-controller="ProjectBids" asp-action="Bid" asp-route-id="@Model.Id">Bid</a>
         </div>
     </div>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Common body styling */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Ensure the body takes full height */
+            overflow: auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards */
+            color: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        /* Title Styling */
+        .card-header h4 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* Section Styling for each part (Title, Description, etc.) */
+        .mt-3 h3 {
+            color: #ff7e00; /* Orange color for headings */
+            margin-bottom: 10px;
+        }
+
+        .mt-3 p {
+            font-size: 1rem;
+        }
+
+        /* Button Styling for Orange and Black Theme */
+        .btn-modern {
+            padding: 10px 20px;
+            background-color: #ff7e00; /* Orange for Bid button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px auto; /* Center the button */
+        }
+
+            .btn-modern:hover {
+                background-color: #e56b00; /* Darker Orange on hover */
+                text-decoration: none;
+            }
+
+        /* Input Focus Styling */
+        input.form-control:focus {
+            border-color: #ff7e00;
+            box-shadow: 0 0 0 0.2rem rgba(255, 126, 0, 0.25);
+        }
+
+        .form-label {
+            text-align: left;
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Card Spacing and Layout */
+        .card-body {
+            padding: 20px;
+        }
+
+            .card-body hr {
+                border: 1px solid rgba(255, 255, 255, 0.3); /* Light separator */
+            }
+
+        /* Footer Styling */
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            white-space: nowrap;
+            line-height: 60px;
+            text-align: center;
+            padding-top: 20px;
+            color: #f4f4f9; /* Light text color */
+        }
+    </style>
+</head>

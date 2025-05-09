@@ -4,43 +4,58 @@
 @model AdminViewModel
 
 <!-- Admin Page User Table -->
-<div class="card mb-4">
-    <div class="card-header">
-        <h4>Users</h4>
-    </div>
-    <div class="card-body">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Bio</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null && Model.Users.Any())
-                {
-                    @foreach (var user in Model.Users.Take(3))
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card mb-4" style="max-width: 1300px; width: 100%;">
+        <!-- Increased width to match other pages -->
+        <div class="card-header">
+            <h4 class="text-light text-left" style="font-size: 1.5rem; color: #ff7e00;">Users</h4> <!-- Orange title with smaller font size -->
+        </div>
+        <div class="card-body">
+            <!-- Success Message (if any) -->
+            @{
+                var successMessage = TempData["SuccessMessage"] as string;
+            }
+            @if (!string.IsNullOrEmpty(successMessage))
+            {
+                <div class="alert alert-success">
+                    @successMessage
+                </div>
+            }
+
+            <!-- Users Table -->
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Bio</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Users.Any())
+                    {
+                        @foreach (var user in Model.Users.Take(3))
+                        {
+                            <tr>
+                                <td>@user.Name</td>
+                                <td>@user.Bio</td>
+                                <td>@user.Email</td>
+                                <td>@user.Phone</td>
+                            </tr>
+                        }
+                    }
+                    else
                     {
                         <tr>
-                            <td>@user.Name</td>
-                            <td>@user.Bio</td>
-                            <td>@user.Email</td>
-                            <td>@user.Phone</td>
+                            <td colspan="4">No users available</td>
                         </tr>
                     }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="4">No users available</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <div class="mt-3">
-            <a class="btn btn-primary" asp-controller="Users" asp-action="List">View Full List of Users</a>
+                </tbody>
+            </table>
+            <div class="mt-3">
+                <a class="btn-modern" asp-controller="Users" asp-action="List">View Full List of Users</a>
+            </div>
         </div>
     </div>
 </div>
@@ -48,7 +63,7 @@
 <!-- Admin Page Projects Table -->
 <div class="card mb-4">
     <div class="card-header">
-        <h4>Projects</h4>
+        <h4 class="text-light text-left" style="font-size: 1.5rem; color: #ff7e00;">Projects</h4>
     </div>
     <div class="card-body">
         <table class="table table-striped table-hover">
@@ -62,29 +77,21 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null && Model.Projects.Any())
-                {
-                    @foreach (var project in Model.Projects.Take(3))
-                    {
-                        <tr>
-                            <td>@project.Title</td>
-                            <td>@project.Description</td>
-                            <td>@project.Tags</td>
-                            <td>@project.Deadline</td>
-                            <td>@project.Status</td>
-                        </tr>
-                    }
-                }
-                else
+                @foreach (var project in Model.Projects)
                 {
                     <tr>
-                        <td colspan="5">No projects available</td>
+                        <td>@project.Title</td>
+                        <td>@project.Description</td>
+                        <td>@project.Tags</td>
+                        <td>@project.Deadline</td>
+                        <td>@project.Status</td>
                     </tr>
                 }
             </tbody>
         </table>
+
         <div class="mt-3">
-            <a class="btn btn-primary" asp-controller="Projects" asp-action="List">View Full List of Projects</a>
+            <a class="btn-modern" asp-controller="Projects" asp-action="List">View Full List of Projects</a>
         </div>
     </div>
 </div>
@@ -92,7 +99,7 @@
 <!-- Admin Page Bidding Logs Table -->
 <div class="card mb-4">
     <div class="card-header">
-        <h4>Bidding Logs</h4>
+        <h4 class="text-light text-left" style="font-size: 1.5rem; color: #ff7e00;">Bidding Logs</h4>
     </div>
     <div class="card-body">
         <table class="table table-striped table-hover">
@@ -105,28 +112,20 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null && Model.BiddingLogs.Any())
-                {
-                    @foreach (var biddinglog in Model.BiddingLogs.Take(3))
-                    {
-                        <tr>
-                            <td>@biddinglog.Status</td>
-                            <td>@biddinglog.Operation</td>
-                            <td>@biddinglog.Note</td>
-                            <td>@biddinglog.Timestamp</td>
-                        </tr>
-                    }
-                }
-                else
+                @foreach (var biddinglog in Model.BiddingLogs)
                 {
                     <tr>
-                        <td colspan="4">No bidding logs available</td>
+                        <td>@biddinglog.Status</td>
+                        <td>@biddinglog.Operation</td>
+                        <td>@biddinglog.Note</td>
+                        <td>@biddinglog.Timestamp</td>
                     </tr>
                 }
             </tbody>
         </table>
+
         <div class="mt-3">
-            <a class="btn btn-primary" asp-controller="BiddingLogs" asp-action="List">View Full List of Bidding Logs</a>
+            <a class="btn-modern" asp-controller="BiddingLogs" asp-action="List">View Full List of Bidding Logs</a>
         </div>
     </div>
 </div>
@@ -134,7 +133,7 @@
 <!-- Admin Page Project Logs Table -->
 <div class="card mb-4">
     <div class="card-header">
-        <h4>Project Logs</h4>
+        <h4 class="text-light text-left" style="font-size: 1.5rem; color: #ff7e00;">Project Logs</h4>
     </div>
     <div class="card-body">
         <table class="table table-striped table-hover">
@@ -149,30 +148,22 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null && Model.ProjectLogs.Any())
-                {
-                    @foreach (var projectlog in Model.ProjectLogs.Take(3))
-                    {
-                        <tr>
-                            <td>@projectlog.Status</td>
-                            <td>@projectlog.OperatorId</td>
-                            <td>@projectlog.Operation</td>
-                            <td>@projectlog.Note</td>
-                            <td>@projectlog.Timestamp</td>
-                            <td>@projectlog.ProjectId</td>
-                        </tr>
-                    }
-                }
-                else
+                @foreach (var projectlog in Model.ProjectLogs)
                 {
                     <tr>
-                        <td colspan="6">No project logs available</td>
+                        <td>@projectlog.Status</td>
+                        <td>@projectlog.OperatorId</td>
+                        <td>@projectlog.Operation</td>
+                        <td>@projectlog.Note</td>
+                        <td>@projectlog.Timestamp</td>
+                        <td>@projectlog.ProjectId</td>
                     </tr>
                 }
             </tbody>
         </table>
+
         <div class="mt-3">
-            <a class="btn btn-primary" asp-controller="ProjectLogs" asp-action="List">View Full List of Project Logs</a>
+            <a class="btn-modern" asp-controller="ProjectLogs" asp-action="List">View Full List of Project Logs</a>
         </div>
     </div>
 </div>
@@ -180,7 +171,7 @@
 <!-- Admin Page Attachments Table -->
 <div class="card mb-4">
     <div class="card-header">
-        <h4>Attachments</h4>
+        <h4 class="text-light text-left" style="font-size: 1.5rem; color: #ff7e00;">Attachments</h4>
     </div>
     <div class="card-body">
         <table class="table table-striped table-hover">
@@ -194,29 +185,21 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null && Model.Attachments.Any())
-                {
-                    @foreach (var attachment in Model.Attachments.Take(3))
-                    {
-                        <tr>
-                            <td>@attachment.Type</td>
-                            <td>@attachment.Name</td>
-                            <td>@attachment.Location</td>
-                            <td>@attachment.LastModifiedTimestamp</td>
-                            <td>@attachment.ProjectId</td>
-                        </tr>
-                    }
-                }
-                else
+                @foreach (var attachment in Model.Attachments)
                 {
                     <tr>
-                        <td colspan="5">No attachments available</td>
+                        <td>@attachment.Type</td>
+                        <td>@attachment.Name</td>
+                        <td>@attachment.Location</td>
+                        <td>@attachment.LastModifiedTimestamp</td>
+                        <td>@attachment.ProjectId</td>
                     </tr>
                 }
             </tbody>
         </table>
+
         <div class="mt-3">
-            <a class="btn btn-primary" asp-controller="Attachments" asp-action="List">View Full List of Attachments</a>
+            <a class="btn-modern" asp-controller="Attachments" asp-action="List">View Full List of Attachments</a>
         </div>
     </div>
 </div>
@@ -224,7 +207,7 @@
 <!-- Admin Page Project Bids Table -->
 <div class="card mb-4">
     <div class="card-header">
-        <h4>Project Bids</h4>
+        <h4 class="text-light text-left" style="font-size: 1.5rem; color: #ff7e00;">Project Bids</h4>
     </div>
     <div class="card-body">
         <table class="table table-striped table-hover">
@@ -237,28 +220,77 @@
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null && Model.ProjectBids.Any())
-                {
-                    @foreach (var projectbid in Model.ProjectBids.Take(3))
-                    {
-                        <tr>
-                            <td>@projectbid.project.Title</td>
-                            <td>@projectbid.bidder</td>
-                            <td>@projectbid.BidValue</td>
-                            <td>@projectbid.SubmittedTime</td>
-                        </tr>
-                    }
-                }
-                else
+                @foreach (var projectbid in Model.ProjectBids)
                 {
                     <tr>
-                        <td colspan="4">No project bids available</td>
+                        <td>@projectbid.project.Title</td>
+                        <td>@projectbid.bidder</td>
+                        <td>@projectbid.BidValue</td>
+                        <td>@projectbid.SubmittedTime</td>
                     </tr>
                 }
             </tbody>
         </table>
+
         <div class="mt-3">
-            <a class="btn btn-primary" asp-controller="ProjectBids" asp-action="List">View Full List of Project Bids</a>
+            <a class="btn-modern" asp-controller="ProjectBids" asp-action="List">View Full List of Project Bids</a>
         </div>
     </div>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Common body styling */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards */
+            color: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        /* Button Styling for Orange and Black Theme */
+        .btn-modern {
+            padding: 10px 20px;
+            background-color: #ff7e00; /* Orange for buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-modern:hover {
+                background-color: #e56b00; /* Darker Orange on hover */
+                text-decoration: none;
+            }
+
+        /* Title and Card Header Styling */
+        .card-header h4 {
+            font-size: 1.5rem;
+            color: #ff7e00;
+        }
+
+        /* Table Styling */
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.1); /* Slight dark background for odd rows */
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.15); /* Hover effect for rows */
+        }
+    </style>
+</head>

@@ -1,14 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Edit Project";
+    ViewData["Title"] = "";
 }
 @model FinalProject.Models.Entities.Project
 @using FinalProject.Models.Entities
+
 <div class="card mb-4">
     <div class="card-header">
-        <h4>Edit Project</h4>
+        <h4 class="text-light">Edit Project</h4>
     </div>
     <div class="card-body">
-
         <!-- Validation Errors (if any) -->
         @if (!ViewData.ModelState.IsValid)
         {
@@ -24,7 +24,7 @@
 
         <!-- Edit Project Form -->
         <form method="post">
-            <!--Id Field-->
+            <!-- Id Field (Hidden) -->
             <div class="mt-3">
                 <input type="hidden" class="form-control" asp-for="Id" />
             </div>
@@ -85,15 +85,95 @@
                 <input type="text" class="form-control" asp-for="Funding" />
             </div>
 
-            <!-- Submitter ID Field -->
-            <div>
+            <!-- Submitter ID Field (Hidden) -->
+            <div class="mt-3">
                 <input type="hidden" asp-for="SubmitterId" />
             </div>
+
             <!-- Save and Delete Buttons -->
             <div class="mt-3">
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="submit" class="btn btn-danger ms-3" asp-action="Delete" asp-controller="Projects">Delete</button>
+                <button type="submit" class="btn-modern">Save</button>
+                <button type="submit" class="btn-danger ms-3" asp-action="Delete" asp-controller="Projects">Delete</button>
             </div>
         </form>
     </div>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Apply Global Dark Theme with Transparent Black Backgrounds */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .card, .section {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards and sections */
+            color: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        /* Button Styling for Orange and Black Theme */
+        .btn-modern {
+            padding: 10px 20px;
+            background-color: #ff7e00; /* Orange for Add and Edit buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 0 auto; /* Center button */
+        }
+
+            .btn-modern:hover {
+                background-color: #e56b00; /* Darker Orange */
+                text-decoration: none;
+            }
+
+        /* Delete Button Styling */
+        .btn-danger {
+            padding: 10px 20px;
+            background-color: #000; /* Black for Delete button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-danger:hover {
+                background-color: #333; /* Darker black on hover */
+                text-decoration: none;
+            }
+
+        /* Table Styling */
+        .table th, .table td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.1); /* Slight dark background for odd rows */
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.15); /* Hover effect for rows */
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+    </style>
+</head>
