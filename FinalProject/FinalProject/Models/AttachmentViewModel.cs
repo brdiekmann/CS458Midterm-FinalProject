@@ -1,11 +1,10 @@
-﻿namespace FinalProject.Models
+﻿using FinalProject.Models.Entities;
+
+namespace FinalProject.Models
 {
     public class AttachmentViewModel
     {
-        public string Type { get; set; }
-        public string Name { get; set; }
-        public string Location { get; set; }
-        public DateTime LastModifiedTimestamp { get; set; }
-        public int ProjectId { get; set; }
+        public Attachment Attachment { get; set; }
+        public List<Attachment>? AttachmentList { get; set; }
     }
 }

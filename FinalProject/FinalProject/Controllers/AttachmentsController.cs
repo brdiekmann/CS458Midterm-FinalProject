@@ -33,11 +33,11 @@ namespace FinalProject.Controllers
         {
             var attachment = new Attachment
             {
-                Type = attachmentViewModel.Type,
-                Name = attachmentViewModel.Name,
-                Location = attachmentViewModel.Location,
-                LastModifiedTimestamp = attachmentViewModel.LastModifiedTimestamp,
-                ProjectId = attachmentViewModel.ProjectId,
+                Type = attachmentViewModel.Attachment.Type,
+                Name = attachmentViewModel.Attachment.Name,
+                Location = attachmentViewModel.Attachment.Location,
+                LastModifiedTimestamp = attachmentViewModel.Attachment.LastModifiedTimestamp,
+                ProjectId = attachmentViewModel.Attachment.ProjectId,
             };
 
             await dbContext.Attachments.AddAsync(attachment);
@@ -101,21 +101,41 @@ namespace FinalProject.Controllers
             var attachments = await dbContext.Attachments
             .Where(p => p.ProjectId == id)
             .ToListAsync();
+            var selectedProject = await dbContext.Projects
+                .Where(p => p.Id == id)
+                .FirstOrDefaultAsync();
             if (attachments == null) return NotFound();
-
-            return View(attachments);
+            var attachment = new Attachment
+            {
+                ProjectId = id,
+                project = selectedProject,
+                LastModifiedTimestamp = DateTime.UtcNow,
+            };
+            var model = new AttachmentViewModel
+            {
+                Attachment = attachment,
+                AttachmentList = attachments
+            };
+            return View(model);
         }
         [HttpGet] 
         public async Task<IActionResult> AddAttachment(int id)
         {
-           
-            var attachment = new AttachmentViewModel
+            var selectedProject = await dbContext.Projects
+                .Where(p => p.Id == id)
+                .FirstOrDefaultAsync();
+            var attachment = new Attachment
             {
                 ProjectId = id,
+                project = selectedProject,
                 LastModifiedTimestamp = DateTime.UtcNow,
+            }; 
+            var attachmentViewModel = new AttachmentViewModel
+            {
+                Attachment = attachment
             };
 
-            return View(attachment);
+            return View(attachmentViewModel);
         }
         [HttpPost] 
         public async Task<IActionResult> AddAttachment(AttachmentViewModel attachmentViewModel)
@@ -126,17 +146,18 @@ namespace FinalProject.Controllers
             }
             var attachment = new Attachment
             {
-                Type = attachmentViewModel.Type,
-                Name = attachmentViewModel.Name,
-                Location = attachmentViewModel.Location,
-                LastModifiedTimestamp = attachmentViewModel.LastModifiedTimestamp,
+                Type = attachmentViewModel.Attachment.Type,
+                Name = attachmentViewModel.Attachment.Name,
+                Location = attachmentViewModel.Attachment.Location,
+                LastModifiedTimestamp = attachmentViewModel.Attachment.LastModifiedTimestamp,
+                project = attachmentViewModel.Attachment.project,
                 //THIS IS CAUSING AN ERROR NEEDS WORK
-                ProjectId = attachmentViewModel.ProjectId
+                ProjectId = attachmentViewModel.Attachment.ProjectId
             };
 
             await dbContext.Attachments.AddAsync(attachment);
             await dbContext.SaveChangesAsync();
-            return RedirectToAction("ViewProjectAttachments");
+            return RedirectToAction("ViewProjectAttachments", new {id = attachment.ProjectId});
         }
         /*
         [HttpGet]

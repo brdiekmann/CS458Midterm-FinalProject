@@ -1,9 +1,14 @@
-﻿@model List<FinalProject.Models.Entities.Attachment>
+﻿@using FinalProject.Models
+@using FinalProject.Models.Entities
+@model AttachmentViewModel
+
 
 <!-- Success Message Alert (if any) -->
 @{
     var successMessage = TempData["SuccessMessage"] as string;
 }
+
+
 @if (!string.IsNullOrEmpty(successMessage))
 {
     <div class="alert alert-success">
@@ -14,7 +19,9 @@
 <!-- Attachments Table Section -->
 <!-- Add Attachment Button -->
 <div class="mt-3">
-    <a class="btn btn-success" asp-controller="Attachments" asp-action="AddAttachment">Add Attachment</a>
+    
+        <a class="btn btn-success" asp-controller="Attachments" asp-action="AddAttachment" asp-route-id="@Model.Attachment.ProjectId">Add Attachment</a>
+    
     <hr />
 </div>
 <div class="card mb-4">
@@ -35,7 +42,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var attachment in Model)
+                @foreach (var attachment in Model.AttachmentList)
                 {
                     <tr>
                         <td>@attachment.Type</td>
