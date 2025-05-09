@@ -38,7 +38,6 @@
                     <th>Name</th>
                     <th>Location</th>
                     <th>LastModifiedTimestamp</th>
-                    <th>Technology</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,10 +48,9 @@
                         <td>@attachment.Name</td>
                         <td>@attachment.Location</td>
                         <td>@attachment.LastModifiedTimestamp</td>
-                        <td>@attachment.ProjectId</td>
                         <td>
                             <!-- Edit Button -->
-                            <a class="btn btn-primary" asp-controller="Attachments" asp-action="EditMyAttachment" asp-route-id="@attachment.Id">Edit</a>
+                            <a class="btn btn-primary" asp-controller="Attachments" asp-action="EditAttachment" asp-route-id="@attachment.Id">Edit</a>
                         </td>
                     </tr>
                 }

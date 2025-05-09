@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.CodeAnalysis;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Build.Evaluation;
 
 namespace FinalProject.Controllers
 {
@@ -118,7 +119,7 @@ namespace FinalProject.Controllers
             };
             return View(model);
         }
-        [HttpGet] 
+        [HttpGet]
         public async Task<IActionResult> AddAttachment(int id)
         {
             var selectedProject = await dbContext.Projects
@@ -129,7 +130,7 @@ namespace FinalProject.Controllers
                 ProjectId = id,
                 project = selectedProject,
                 LastModifiedTimestamp = DateTime.UtcNow,
-            }; 
+            };
             var attachmentViewModel = new AttachmentViewModel
             {
                 Attachment = attachment
@@ -137,7 +138,7 @@ namespace FinalProject.Controllers
 
             return View(attachmentViewModel);
         }
-        [HttpPost] 
+        [HttpPost]
         public async Task<IActionResult> AddAttachment(AttachmentViewModel attachmentViewModel)
         {
             if (!ModelState.IsValid)
@@ -151,17 +152,47 @@ namespace FinalProject.Controllers
                 Location = attachmentViewModel.Attachment.Location,
                 LastModifiedTimestamp = attachmentViewModel.Attachment.LastModifiedTimestamp,
                 project = attachmentViewModel.Attachment.project,
-                //THIS IS CAUSING AN ERROR NEEDS WORK
                 ProjectId = attachmentViewModel.Attachment.ProjectId
             };
 
             await dbContext.Attachments.AddAsync(attachment);
             await dbContext.SaveChangesAsync();
-            return RedirectToAction("ViewProjectAttachments", new {id = attachment.ProjectId});
+            return RedirectToAction("ViewProjectAttachments", new { id = attachment.ProjectId });
         }
-        /*
+
         [HttpGet]
-        public async Task<IActionResult> EditAttachment()
-        */
+        public async Task<IActionResult> EditAttachment(int id)
+        {
+
+            var attachment = await dbContext.Attachments
+            .Where(u => u.Id == id)
+            .FirstOrDefaultAsync(p => p.Id == id);
+
+            if (attachment == null) return NotFound();
+
+            return View(attachment);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditAttachment(Attachment attachmentViewModel)
+        {
+            if (!ModelState.IsValid) return View(attachmentViewModel);
+            var attachment = await dbContext.Attachments.FindAsync(attachmentViewModel.Id);
+
+            if (attachment is not null)
+            {
+                attachment.Type = attachmentViewModel.Type;
+                attachment.Name = attachmentViewModel.Name;
+                attachment.Location = attachmentViewModel.Location;
+                attachment.LastModifiedTimestamp = attachmentViewModel.LastModifiedTimestamp;
+                attachment.project = attachmentViewModel.project;
+                attachment.ProjectId = attachmentViewModel.ProjectId;
+
+                await dbContext.SaveChangesAsync();
+                return RedirectToAction("ViewProjectAttachments", new { id = attachment.ProjectId });
+            }
+            return View(attachment);
+
+        }
     }
 }
