@@ -58,17 +58,47 @@ a {
 
     /* Navbar Link Styling */
     .navbar-nav .nav-link {
-        color: #f4f4f9; /* Light color for the links */
+        color: #f4f4f9 !important; /* Default color for links */
         padding: 8px 16px; /* Space around the text */
         transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color and background */
+        text-decoration: none;
     }
 
-        /* Hover Effect for Navbar Links */
+    .navbar-nav .nav-link {
+        color: #f4f4f9; /* Set the default color for nav links */
+        text-decoration: none;
+    }
+
+        /* Change color on hover */
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link:focus {
-            color: #ff7e00; /* Orange color on hover */
-            background-color: rgba(0, 0, 0, 0.2); /* Dark background with transparency on hover */
+            color: #ff7e00 !important; /* Orange color on hover */
+            background-color: rgba(0, 0, 0, 0.2); /* Optional: Dark background */
         }
+
+        /* Apply the same color on active state for nav links */
+        .navbar-nav .nav-link.active {
+            color: #ff7e00 !important; /* Orange on active */
+            background-color: rgba(0, 0, 0, 0.2); /* Optional: Dark background */
+        }
+
+    /* Make sure dropdown links also get the hover effect */
+    .navbar-nav .dropdown-toggle:hover,
+    .navbar-nav .dropdown-item:hover {
+        color: #ff7e00 !important; /* Orange for hover */
+    }
+    /* Dropdown hover effect */
+    .navbar-nav .nav-item.dropdown:hover .dropdown-toggle {
+        color: #ff7e00 !important; /* Orange for the dropdown hover */
+    }
+
+    .navbar-nav .dropdown-item:hover {
+        color: #ff7e00 !important; /* Orange for dropdown items hover */
+    }
+
+
+
+
 
 /* Keep the current navbar toggle behavior */
 .navbar-toggler {
@@ -119,15 +149,28 @@ button.btn-primary {
     line-height: 60px;
     text-align: center;
     padding-top: 20px;
+    color: #ffffff; /* Set footer text color to white */
 }
 
-    .footer a {
-        color: #ff7e00;
+footer a.footer-link {
+    color: #ff7e00 !important;
+    text-decoration: none !important;
+}
+
+    footer a.footer-link:hover,
+    footer a.footer-link:focus {
+        color: #e56b00 !important;
     }
 
-        .footer a:hover {
-            color: #e56b00; /* Hover effect for footer links */
-        }
+    footer a.footer-link:visited {
+        color: #ff7e00 !important;
+    }
+
+
+/* Footer paragraph text to remain white */
+.footer p {
+    color: #ffffff !important;
+}
 
 @media (max-width: 767px) {
     .navbar-nav {

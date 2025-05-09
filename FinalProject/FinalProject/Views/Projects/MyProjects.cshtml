@@ -45,10 +45,16 @@
                         <td>@project.Status</td>
                         <td>$@project.Funding</td>
                         <td>
-                            <!-- Edit Button -->
-                            <a class="btn-modern" asp-controller="Projects" asp-action="EditMyProject" asp-route-id="@project.Id">Edit</a>
-                            <a class="btn-modern" asp-controller="Attachments" asp-action="ViewProjectAttachments" asp-route-id="@project.Id">Attachments</a>
+                            <!-- Action Buttons Container -->
+                            <div class="d-flex justify-content-start">
+                                <!-- Edit Button -->
+                                <a class="btn-modern" asp-controller="Projects" asp-action="EditMyProject" asp-route-id="@project.Id">Edit</a>
+
+                                <!-- Attachments Button -->
+                                <a class="btn-modern ms-3" asp-controller="Attachments" asp-action="ViewProjectAttachments" asp-route-id="@project.Id">Attachments</a>
+                            </div>
                         </td>
+
                     </tr>
                 }
             </tbody>
@@ -62,7 +68,7 @@
         /* Common body styling */
         body {
             background-image: url('/background.gif');
-            background-repeat: no-repeat;
+            background-repeat: repeat;
             background-size: cover;
             background-position: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -109,7 +115,6 @@
             font-weight: bold;
             transition: background-color 0.3s ease;
             display: inline-block;
-            margin: 10px auto; /* Center button */
         }
 
             .btn-modern:hover {

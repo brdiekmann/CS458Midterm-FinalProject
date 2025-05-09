@@ -90,11 +90,11 @@
                 <input type="hidden" asp-for="SubmitterId" />
             </div>
 
-            <!-- Save and Delete Buttons -->
-            <div class="mt-3">
+            <div class="mt-3 d-flex justify-content-center">
                 <button type="submit" class="btn-modern">Save</button>
-                <button type="submit" class="btn-danger ms-3" asp-action="Delete" asp-controller="Projects">Delete</button>
+                <button type="submit" class="btn-modern btn-danger ms-3" asp-action="Delete" asp-controller="Projects">Delete</button>
             </div>
+
         </form>
     </div>
 </div>
@@ -105,7 +105,7 @@
         /* Apply Global Dark Theme with Transparent Black Backgrounds */
         body {
             background-image: url('/background.gif');
-            background-repeat: no-repeat;
+            background-repeat: repeat;
             background-size: cover;
             background-position: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -123,40 +123,45 @@
         }
 
         /* Button Styling for Orange and Black Theme */
+        /* Button Styling for Orange and Black Theme */
         .btn-modern {
             padding: 10px 20px;
-            background-color: #ff7e00; /* Orange for Add and Edit buttons */
+            background-color: #ff7e00; /* Orange for buttons */
             color: white;
             border: none;
             border-radius: 5px;
             font-size: 1.1rem;
             font-weight: bold;
             transition: background-color 0.3s ease;
-            display: block;
-            margin: 0 auto; /* Center button */
+            display: inline-block;
+            margin: 0 10px; /* Space between buttons */
         }
 
             .btn-modern:hover {
-                background-color: #e56b00; /* Darker Orange */
+                background-color: #e56b00; /* Darker Orange on hover */
                 text-decoration: none;
             }
 
-        /* Delete Button Styling */
         .btn-danger {
-            padding: 10px 20px;
             background-color: #000; /* Black for Delete button */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
         }
 
             .btn-danger:hover {
                 background-color: #333; /* Darker black on hover */
                 text-decoration: none;
             }
+
+        /* Ensuring buttons are aligned side by side and properly spaced */
+        .d-flex {
+            justify-content: center;
+            align-items: center;
+        }
+
+            .d-flex .btn-modern {
+                margin-right: 15px; /* Space between buttons */
+            }
+
+
 
         /* Table Styling */
         .table th, .table td {

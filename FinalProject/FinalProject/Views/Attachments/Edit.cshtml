@@ -4,49 +4,165 @@
 @model FinalProject.Models.Entities.Attachment
 
 <!-- Edit Attachment Page Card -->
-<div class="card mb-4">
-    <div class="card-header">
-        <h4>@ViewData["Title"]</h4>
-    </div>
-    <div class="card-body">
-        @if (Model is null)
-        {
-            <p>No attachment was found with this Id</p>
-        }
-        else
-        {
-            <form method="post">
-                <div class="mt-3">
-                    <label class="form-label">Id:</label>
-                    <input type="text" class="form-control" asp-for="Id" readonly />
-                </div>
-                <div class="mt-3">
-                    <label class="form-label">Type:</label>
-                    <input type="text" class="form-control" asp-for="Type" />
-                </div>
-                <div class="mt-3">
-                    <label class="form-label">Name:</label>
-                    <input type="text" class="form-control" asp-for="Name" />
-                </div>
-                <div class="mt-3">
-                    <label class="form-label">Location:</label>
-                    <input type="text" class="form-control" asp-for="Location" />
-                </div>
-                <div class="mt-3">
-                    <label class="form-label">LastModifiedTimestamp:</label>
-                    <input type="datetime-local" class="form-control" asp-for="LastModifiedTimestamp" />
-                </div>
-                <div class="mt-3">
-                    <label class="form-label">ProjectId:</label>
-                    <input type="text" class="form-control" asp-for="ProjectId" />
-                </div>
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card mb-4" style="max-width: 800px; width: 100%;">
+        <!-- Ensure card width is constrained -->
+        <div class="card-header">
+            <h4 class="text-orange">Edit Attachment</h4> <!-- Orange title -->
+        </div>
+        <div class="card-body">
+            @if (Model is null)
+            {
+                <p>No attachment was found with this Id</p>
+            }
+            else
+            {
+                <form method="post">
+                    <!-- Display validation errors -->
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                {
+                                    <li>@error.ErrorMessage</li>
+                                }
+                            </ul>
+                        </div>
+                    }
 
-                <!-- Action Buttons -->
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <button type="submit" class="btn btn-danger ms-3" asp-action="Delete" asp-controller="Attachments">Delete</button>
-                </div>
-            </form>
-        }
+                    <!-- Id Input (readonly) -->
+                    <div class="mt-3">
+                        <label class="form-label">Id:</label>
+                        <input type="text" class="form-control" asp-for="Id" readonly />
+                    </div>
+
+                    <!-- Type Input -->
+                    <div class="mt-3">
+                        <label class="form-label">Type:</label>
+                        <input type="text" class="form-control" asp-for="Type" />
+                    </div>
+
+                    <!-- Name Input -->
+                    <div class="mt-3">
+                        <label class="form-label">Name:</label>
+                        <input type="text" class="form-control" asp-for="Name" />
+                    </div>
+
+                    <!-- Location Input -->
+                    <div class="mt-3">
+                        <label class="form-label">Location:</label>
+                        <input type="text" class="form-control" asp-for="Location" />
+                    </div>
+
+                    <!-- LastModifiedTimestamp Input -->
+                    <div class="mt-3">
+                        <label class="form-label">Last Modified Timestamp:</label>
+                        <input type="datetime-local" class="form-control" asp-for="LastModifiedTimestamp" />
+                    </div>
+
+                    <!-- ProjectId Input -->
+                    <div class="mt-3">
+                        <label class="form-label">ProjectId:</label>
+                        <input type="text" class="form-control" asp-for="ProjectId" />
+                    </div>
+
+                    <!-- Action Buttons (Centered) -->
+                    <div class="mt-3 text-center">
+                        <button type="submit" class="btn-modern">Save</button>
+
+                        <!-- Delete Button -->
+                        <button type="submit" class="btn btn-dark ms-3" asp-action="Delete" asp-controller="Attachments">Delete</button>
+                    </div>
+                </form>
+            }
+        </div>
     </div>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Common body styling */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards */
+            color: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        /* Title Styling */
+        .card-header h4 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff7e00; /* Orange color for title */
+        }
+
+        /* Button Styling for Orange and Black Theme */
+        .btn-modern {
+            padding: 10px 20px;
+            background-color: #ff7e00; /* Orange for Save button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 10px auto; /* Center the button */
+        }
+
+            .btn-modern:hover {
+                background-color: #e56b00; /* Darker Orange on hover */
+                text-decoration: none;
+            }
+
+        /* Delete Button Styling (Black) */
+        .btn.btn-dark {
+            padding: 10px 20px;
+            background-color: #000; /* Black color for Delete button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn.btn-dark:hover {
+                background-color: #333; /* Darker black for hover */
+            }
+
+        /* Form Styling */
+        .form-label {
+            font-weight: bold;
+        }
+
+        input.form-control:focus {
+            border-color: #ff7e00;
+            box-shadow: 0 0 0 0.2rem rgba(255, 126, 0, 0.25);
+        }
+
+        /* Card Spacing and Layout */
+        .card-body {
+            padding: 20px;
+        }
+
+            .card-body hr {
+                border: 1px solid rgba(255, 255, 255, 0.3); /* Light separator */
+            }
+    </style>
+</head>

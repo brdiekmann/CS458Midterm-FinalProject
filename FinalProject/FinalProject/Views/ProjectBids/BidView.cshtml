@@ -2,46 +2,113 @@
 @model FinalProject.Models.Entities.ProjectBid
 
 <!-- Project Details Page Card -->
-<div class="card mb-4">
-    <div class="card-header">
-        <h4>Bid Details</h4>
-    </div>
-    <div class="card-body">
-        <!-- Title -->
-        <div class="mt-3">
-            <h3>Project:</h3>
-            <p>@Model.project.Title</p>
-            <hr />
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card mb-4" style="max-width: 1000px; width: 100%;">
+        <!-- Ensure card width is consistent with others -->
+        <!-- Card Header with Orange Title -->
+        <div class="card-header">
+            <h4 class="text-light text-left" style="font-size: 1.5rem; color: #ff7e00;">Bid Details</h4> <!-- Orange title -->
         </div>
+        <div class="card-body">
+            <!-- Project Title -->
+            <div class="mt-3">
+                <h3>Project:</h3>
+                <p>@Model.project.Title</p>
+                <hr />
+            </div>
 
+            <!-- Project Description -->
+            <div class="mt-3">
+                <h3>Description:</h3>
+                <p>@Model.project.Description</p>
+                <hr />
+            </div>
 
-        <!-- Description -->
-        <div class="mt-3">
-            <h3>Description:</h3>
-            <p>@Model.project.Description</p>
-            <hr />
+            <!-- Submitted Time -->
+            <div class="mt-3">
+                <h3>Time placed:</h3>
+                <p>@Model.SubmittedTime.ToString("yyyy-MM-dd HH:mm")</p> <!-- Formatting the DateTime -->
+                <hr />
+            </div>
+
+            <!-- Bidder Name -->
+            <div class="mt-3">
+                <h3>Bidder Name:</h3>
+                <p>@Model.bidder</p>
+                <hr />
+            </div>
+
+            <!-- Bid Value -->
+            <div class="mt-3">
+                <h3>Bid Value:</h3>
+                <p>$@Model.BidValue</p>
+                <hr />
+            </div>
         </div>
-
-        <!-- Deadline -->
-        <div class="mt-3">
-            <h3>Time placed:</h3>
-            <p>@Model.SubmittedTime.ToString("yyyy-MM-dd HH:mm")</p> <!-- Formatting the DateTime -->
-            <hr />
-        </div>
-
-        <!-- Technology -->
-        <div class="mt-3">
-            <h3>Bidder Name:</h3>
-            <p>@Model.bidder</p>
-            <hr />
-        </div>
-
-        <!-- Funding -->
-        <div class="mt-3">
-            <h3>Bid Value:</h3>
-            <p>$@Model.BidValue</p>
-            <hr />
-        </div>
-
     </div>
 </div>
+
+<!-- Add Styles -->
+<head>
+    <style>
+        /* Common body styling */
+        body {
+            background-image: url('/background.gif');
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards */
+            color: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        /* Title Styling */
+        .card-header h4 {
+            text-align: left;
+            font-size: 1.5rem; /* Smaller font size for title */
+            color: #ff7e00; /* Orange color for title */
+        }
+
+        /* Section Styling for each part (Project Title, Description, etc.) */
+        .mt-3 h3 {
+            color: #ff7e00; /* Orange color for headings */
+            margin-bottom: 10px;
+        }
+
+        .mt-3 p {
+            font-size: 1rem;
+        }
+
+        /* Card Spacing and Layout */
+        .card-body {
+            padding: 20px;
+        }
+
+            .card-body hr {
+                border: 1px solid rgba(255, 255, 255, 0.3); /* Light separator */
+            }
+
+        /* Input Focus Styling */
+        input.form-control:focus {
+            border-color: #ff7e00;
+            box-shadow: 0 0 0 0.2rem rgba(255, 126, 0, 0.25);
+        }
+
+        .form-label {
+            text-align: left;
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
